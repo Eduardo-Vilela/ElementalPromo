@@ -30,22 +30,98 @@ import { BoxPrincipal,
   Subtitulo,
   FotoPlano,
   TituloCasita,
+  Texto1,
   Texto2,
+  BoxJoven,
+  Joven,
+  BoxForm,
+  BoxLogo,
+  TituloForm,
 
 } from './Elements'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import "swiper/css/pagination";
 import "swiper/css";
+import { useForm } from "react-hook-form";
 
 function ElementalPromo() {
+
+  const {
+    register,
+    formState: { errors },
+    handleSubmit
+  } = useForm({
+    mode: "onChange"
+  });
+  const onSubmit = (data) => {
+  
+  };
+
+
   return (
     <>
     <Container>
      <BoxPrincipal>
          <BoxSecundario>
            <BoxDerecha>
+             <BoxLogo>
+              <div>
+                <img alt='logo' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654218679/ELEMENTAL%20CONSTRUCTORA/LandingPromo/222_oule7w.svg'/>
+              </div>
+             </BoxLogo>
+             <BoxForm>
+              <div>
+               <form onSubmit={handleSubmit(onSubmit)}>
+                    <TituloForm>ELEGIR COMO VIVIR,<br/><b>ELEGI ELEMENTAL</b></TituloForm>
+                    <Texto2>Dejanos tus datos para recibir más información sobre nuestras viviendas. </Texto2>
+                    <label htmlFor="firstName">First Name</label>
+                    <input
+                      placeholder="Bill"
+                      {...register("firstName", {
+                        required: "this is a required",
+                        maxLength: {
+                          value: 2,
+                          message: "Max length is 2"
+                        }
+                      })}
+                    />
+                    {errors.firstName && <p>{errors.firstName.message}</p>}
 
+                    <label htmlFor="lastName">Last Name</label>
+                    <input
+                      placeholder="Luo"
+                      {...register("lastName", {
+                        required: "this is required",
+                        minLength: {
+                          value: 2,
+                          message: "Min length is 2"
+                        }
+                      })}
+                    />
+                    {errors.lastName && <p>{errors.lastName.message}</p>}
+
+                    <label htmlFor="email">Email</label>
+                    <input
+                      placeholder="bluebill1049@hotmail.com"
+                      type="text"
+                      {...register("email", {
+                        required: "this is required",
+                        pattern: {
+                          value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                          message: "Invalid email address"
+                        }
+                      })}
+                    />
+                    {errors.lastName && <p>{errors.lastName.message}</p>}
+                    <div>
+                      <TituloForm>¿EN CUAL DE NUESTRAS VIVIENDAS <br/> ESTAS INTERESADO?</TituloForm>
+                    </div>
+
+                    <input type="submit" />
+                  </form>
+               </div>
+             </BoxForm>
            </BoxDerecha>
            <BoxIzquierda>
               <BoxArriba>
@@ -111,25 +187,26 @@ function ElementalPromo() {
                   </Parte1>
                   <Parte2>
                     <BoxCasita>
-                       <img width='50' height='50' alt='icono' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202015/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Frame_ullzbf.png'/>
-                       <img alt='linea' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202690/ELEMENTAL%20CONSTRUCTORA/LandingPromo/linea_hmr0je.png'/>
+                       <img width='35' height='35' alt='icono' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202015/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Frame_ullzbf.png'/>
+                       {/* <img  alt='linea' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202690/ELEMENTAL%20CONSTRUCTORA/LandingPromo/linea_hmr0je.png'/> */}
                        <TituloCasita>
-                        Construimos la casa de  tus 
-                        sueños a tu medida, 
-                        con la mejor financiación.
+                        CONSTRUIMOS LA<br/>
+                         CASA DE TUS<br/> 
+                        SUEÑOS A TU MEDIDA,<br/> 
+                        CON LA MEJOR <br/>
+                        FINANCIACION.
                        </TituloCasita>
                     </BoxCasita>
                     <BoxFamilias>
-                       <Texto2>18</Texto2>
+                       <Texto1>18</Texto1>
                        <Texto2>FAMILIAS NOS <br/>ELIGIERON</Texto2>
-                       <Texto2>84</Texto2>
+                       <Texto1>84</Texto1>
                        <Texto2>EN PROMEDIO MENSUAL <br/>DE FORMULARIOS <br/>RECIBIDOS</Texto2>
                     </BoxFamilias>
-                    <div>
-
-                    </div>
-                  </Parte2>
-                 
+                    <BoxJoven>
+                     <Joven>SOMOS UNA<br/> EMPRESA JOVEN, <br/>A PURA EXPANSION Y <br/>CRECIMIENTO.</Joven> 
+                    </BoxJoven>
+                  </Parte2>               
                 </Box2>
               </BoxArriba>
               <BoxAbajo>

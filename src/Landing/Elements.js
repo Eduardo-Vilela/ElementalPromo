@@ -87,9 +87,8 @@ width: 70%;
 height: 700px;
 `
 export const Parte2 = styled.div`
-  
-height:60vh;
-width: 18vw;
+height:75vh;
+width: 15vw;
 position:relative;
 margin: auto;
 display: flex;
@@ -99,12 +98,12 @@ justify-content: center;
  &:after{
     position: absolute;
     top: 0%;
-    left: 0;
+    left: 0px;
     content: '';
-    height: 290px;
+    height: 205px;
     width: 0;
-    border-left: 18vw solid #1A1A1A;
-    border-bottom: 8vw solid transparent;
+    border-left: 15vw solid #1A1A1A;
+    border-bottom: 5vw solid transparent;
     border-top: 0px solid transparent;
     overflow: hidden;
   }
@@ -130,21 +129,38 @@ justify-content: space-around;
 `
 export const BoxCasita = styled.div`
 width: 90%;
-height: 520px;
+height: 26vh;
 margin: auto;
 z-index: 9999;
+position: absolute;
+top: 0;
+bottom: 440px;
+left: 0;
+right: 0;
+
+
 display: flex;
 flex-direction: column;
 justify-content: space-around;
-text-align: center;
 align-items: center;
+text-align: center;
+
 `
 
 export const BoxFamilias = styled.div`
 width: 90%;
-height: 460px;
+height: 27vh;
 margin: auto;
 border: 1px solid #000000;
+position: absolute;
+top: 0px;
+bottom: 20px;
+left: 10px;
+right: 0;
+text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
 `
 export const Titulo = styled.p`
 font-weight: 400;
@@ -200,7 +216,7 @@ width: 35%;
 height:300px;
 `
 export const Beneficio = styled.div`
-width: 180px;
+width: 175px;
 height: 125px;
 text-align: center;
 align-self: end;
@@ -224,13 +240,56 @@ height: 250px;
 export const TituloCasita = styled.h3`
 color: white;
 font-family: 'Hind Siliguri', sans-serif;
-font-size: 22px;
+font-size: 15px;
 font-weight: 200;
 `
-
+export const Texto1 = styled.h3`
+font-family: 'Hind Siliguri', sans-serif;
+font-size: 15px;
+line-height: 0;
+`
 export const Texto2 = styled.p`
 font-size: 12px;
 color: black;
-font-weight: 200;
+font-weight: 600;
 font-family: 'Hind Siliguri', sans-serif;
+line-height: 12px;
+`
+
+export const BoxJoven = styled.div`
+width: 90%;
+height: 20vh;
+position: absolute;
+top: 450px;
+bottom: 0;
+left: 20px;
+right: 0;
+`
+
+export const Joven = styled.h3`
+font-family: 'Hind Siliguri', sans-serif;
+font-size: 17px;
+text-align: center;
+`
+
+export const BoxForm = styled.form`
+width: 100%;
+height: 850px;
+background:blue;
+`
+
+export const BoxLogo = styled.div`
+width: 100%;
+height: 150px;
+background: #1B1B1B;  
+align-items: center;  
+display: flex;
+flex-direction: row;
+justify-content: center;
+`
+
+export const TituloForm = styled.p`
+font-family: 'Hind Siliguri', sans-serif;
+font-size: 20px;
+margin: 0;
 `
