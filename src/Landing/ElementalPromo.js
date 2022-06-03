@@ -32,11 +32,26 @@ import { BoxPrincipal,
   TituloCasita,
   Texto1,
   Texto2,
+  Texto3,
+  Texto4,
   BoxJoven,
   Joven,
   BoxForm,
   BoxLogo,
   TituloForm,
+  TituloForm2,
+  Tituloform3,
+  SeparadorForm,
+  InputForm,
+  LabelInput,
+  SeparadorForm2,
+  AjusteCheckBox,
+  ButtonForm,
+  LabelInputCheck,
+  InputFormCheck,
+  SubBoxLogo,
+  BoxMobile,
+  LabelErrores,
 
 } from './Elements'
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -44,18 +59,48 @@ import { Autoplay } from "swiper";
 import "swiper/css/pagination";
 import "swiper/css";
 import { useForm } from "react-hook-form";
+import ElementalPromoMobile from './ElementalPromoMobile';
+import axios from "axios";
+import { toast } from 'react-toastify';
 
 function ElementalPromo() {
 
   const {
     register,
+    reset,
     formState: { errors },
     handleSubmit
   } = useForm({
     mode: "onChange"
   });
-  const onSubmit = (data) => {
-  
+  const onSubmit = (data,e) => {
+    //alert(JSON.stringify(data));
+    axios.post(`https://elementalconstructora.com.ar/webApi/public/FormularioPromoElemental`, data)
+      .then(function (response) {
+        toast.success('Formulario enviado!', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
+      })
+      reset()
+      .catch(function (error) {
+        toast.error('No se pudo enviar el formulario!', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
+      });
+
+    reset()
   };
 
 
@@ -66,19 +111,20 @@ function ElementalPromo() {
          <BoxSecundario>
            <BoxDerecha>
              <BoxLogo>
-              <div>
-                <img alt='logo' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654218679/ELEMENTAL%20CONSTRUCTORA/LandingPromo/222_oule7w.svg'/>
-              </div>
+              <SubBoxLogo>
+                <img width='80%' alt='logo' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654218679/ELEMENTAL%20CONSTRUCTORA/LandingPromo/222_oule7w.svg'/>
+              </SubBoxLogo>
              </BoxLogo>
-             <BoxForm>
-              <div>
-               <form onSubmit={handleSubmit(onSubmit)}>
-                    <TituloForm>ELEGIR COMO VIVIR,<br/><b>ELEGI ELEMENTAL</b></TituloForm>
-                    <Texto2>Dejanos tus datos para recibir más información sobre nuestras viviendas. </Texto2>
-                    <label htmlFor="firstName">First Name</label>
-                    <input
-                      placeholder="Bill"
-                      {...register("firstName", {
+             <BoxForm onSubmit={handleSubmit(onSubmit)}>
+              <SeparadorForm>
+                    <TituloForm>ELEGÍ COMO VIVIR,</TituloForm>
+                    <Tituloform3>ELEGÍ ELEMENTAL</Tituloform3>
+                    <Texto3>Dejanos tus datos para recibir más información sobre nuestras viviendas. </Texto3>
+              </SeparadorForm>
+              <SeparadorForm2>      
+                    <LabelInput htmlFor="Nombre">NOMBRE</LabelInput>
+                    <InputForm
+                      {...register("Nombre", {
                         required: "this is a required",
                         maxLength: {
                           value: 2,
@@ -86,12 +132,12 @@ function ElementalPromo() {
                         }
                       })}
                     />
-                    {errors.firstName && <p>{errors.firstName.message}</p>}
+                    {errors.Nombre && <LabelErrores>{errors.Nombre.message}</LabelErrores>}
 
-                    <label htmlFor="lastName">Last Name</label>
-                    <input
-                      placeholder="Luo"
-                      {...register("lastName", {
+                    <LabelInput htmlFor="Telefono">TELEFONO</LabelInput>
+                    <InputForm
+                       type="number"
+                      {...register("Telefono", {
                         required: "this is required",
                         minLength: {
                           value: 2,
@@ -99,11 +145,10 @@ function ElementalPromo() {
                         }
                       })}
                     />
-                    {errors.lastName && <p>{errors.lastName.message}</p>}
+                    {errors.Telefono && <LabelErrores>{errors.Telefono.message}</LabelErrores>}
 
-                    <label htmlFor="email">Email</label>
-                    <input
-                      placeholder="bluebill1049@hotmail.com"
+                    <LabelInput htmlFor="email">EMAIL</LabelInput>
+                    <InputForm
                       type="text"
                       {...register("email", {
                         required: "this is required",
@@ -113,14 +158,37 @@ function ElementalPromo() {
                         }
                       })}
                     />
-                    {errors.lastName && <p>{errors.lastName.message}</p>}
-                    <div>
-                      <TituloForm>¿EN CUAL DE NUESTRAS VIVIENDAS <br/> ESTAS INTERESADO?</TituloForm>
-                    </div>
-
-                    <input type="submit" />
-                  </form>
-               </div>
+                    {errors.email && <LabelErrores>{errors.email.message}</LabelErrores>}
+              </SeparadorForm2>
+              <SeparadorForm>
+                      <TituloForm2>¿EN CUAL DE NUESTRAS VIVIENDAS <br/> ESTAS INTERESADO?</TituloForm2>
+              </SeparadorForm>
+              <SeparadorForm>
+                  <AjusteCheckBox>
+                    <LabelInputCheck htmlFor="lineaModular">
+                      LÍNEA MODULAR
+                      <Texto4>Una opción inmediata y económica.</Texto4>
+                    </LabelInputCheck>
+                    <InputFormCheck type="checkbox" placeholder="Linea Modular" {...register("Linea Modular", {required: true})} />
+                  </AjusteCheckBox> 
+                  <AjusteCheckBox> 
+                    <LabelInputCheck htmlFor="lineaTradicional">
+                      LÍNEA TRADICIONAL
+                      <Texto4>Modelos en construcción húmeda. </Texto4>
+                    </LabelInputCheck>
+                    <InputFormCheck type="checkbox" placeholder="Linea Modular" {...register("Linea Modular", {required: true})} />
+                  </AjusteCheckBox>
+                  <AjusteCheckBox>
+                    <LabelInputCheck htmlFor="lineaDesign">
+                      LÍNEA DESIGN
+                      <Texto4>Diseñá tu casa a tu medida. </Texto4>
+                    </LabelInputCheck>
+                    <InputFormCheck  type="checkbox" placeholder="Linea Modular" {...register("Linea Modular", {required: true})} />
+                  </AjusteCheckBox>  
+              </SeparadorForm>
+              <SeparadorForm>
+                    <ButtonForm type="submit" />
+               </SeparadorForm>
              </BoxForm>
            </BoxDerecha>
            <BoxIzquierda>
@@ -157,7 +225,7 @@ function ElementalPromo() {
                     </BoxCarrousel>
                     <BoxParrafos>
                       <Parrafo1>
-                         <TituloParrafos>Línea Modular</TituloParrafos>
+                         <TituloParrafos>LÍNEA MODULAR</TituloParrafos>
                          <TextoParrafo>
                            Vivienda super económica con entrega en sólo 60 días 
                            y una colocación de sólo 72hs, manteniendo una alta 
@@ -165,7 +233,7 @@ function ElementalPromo() {
                          </TextoParrafo>
                       </Parrafo1>
                       <Parrafo2>
-                         <TituloParrafos>Línea tradicional</TituloParrafos>
+                         <TituloParrafos>LÍNEA TRADICIONAL</TituloParrafos>
                          <TextoParrafo> 
                            Ofrecemos una variedad de modelos 
                            preestablecidos de casas y dúplex, 
@@ -174,7 +242,7 @@ function ElementalPromo() {
                          </TextoParrafo>
                       </Parrafo2>
                       <Parrafo3>
-                         <TituloParrafos>Línea design</TituloParrafos>
+                         <TituloParrafos>LÍNEA DESIGN</TituloParrafos>
                          <TextoParrafo>
                             Para satisfacer a todo nuestro público 
                             ofrecemos un servicio de construcción 
@@ -238,6 +306,11 @@ function ElementalPromo() {
            </BoxIzquierda>
          </BoxSecundario>
      </BoxPrincipal>
+
+     <BoxMobile>
+       <ElementalPromoMobile/>
+     </BoxMobile>
+
      </Container>
     </>
   )
