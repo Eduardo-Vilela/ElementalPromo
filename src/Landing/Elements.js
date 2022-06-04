@@ -835,7 +835,7 @@ height: 5%;
   height: 5%;
 }
 @media (max-width: 767px) { 
-  height: 5%;
+  height: 150px;
 }
 @media (min-width: 768px) and (max-width: 1199px) { 
   height: 12%;
