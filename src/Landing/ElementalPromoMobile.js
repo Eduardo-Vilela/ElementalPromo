@@ -41,6 +41,9 @@ TituloCasita,
 Texto1,
 Texto2,
 LabelErrores,
+AjusteMobile,
+BoxMobile3,
+Seccion7,
  
 } from './Elements'
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -98,20 +101,17 @@ function ElementalPromoMobile() {
     <>
       <BoxPrincipal2>
         <Seccion1>
-          <BoxLogo>
-            <SubBoxLogo>
-                  <img width='80%' alt='logo' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654218679/ELEMENTAL%20CONSTRUCTORA/LandingPromo/222_oule7w.svg'/>
-            </SubBoxLogo>
-          </BoxLogo>
+          <BoxMobile3>
+            <img width='80%' alt='logo' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654218679/ELEMENTAL%20CONSTRUCTORA/LandingPromo/222_oule7w.svg'/>
+          </BoxMobile3>
           <BoxMobile2>
             <Titulo>
-              EL SUEÑO DE LA CASA PROPIA, EN TIEMPO RECORD.<br/> 
+              EL SUEÑO DE LA CASA PROPIA,<br/>  EN TIEMPO RECORD.<br/> 
               <b>FINANCIACION A TASA 0% EN PESOS</b>
             </Titulo>
           </BoxMobile2>
         </Seccion1> 
         <Seccion2>
-           <SubBoxCarusel>
               <Swiper
                 spaceBetween={30}
                 autoplay={{
@@ -121,7 +121,7 @@ function ElementalPromoMobile() {
                 modules={[Autoplay]}
                 className="mySwiper"
               >
-                 <SwiperSlide>
+                 <SwiperSlide style={{textAlign:'center'}}>
                    <img alt='slide1' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654116642/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Mobile/SLIDE_1_cwmrbl.webp'/>
                    <Parrafo1>
                        <TituloParrafos>LÍNEA MODULAR</TituloParrafos>
@@ -132,7 +132,7 @@ function ElementalPromoMobile() {
                       </TextoParrafo>
                     </Parrafo1>
                  </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide style={{textAlign:'center'}}>
                   <img alt='slide2' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654116642/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Mobile/SLIDE_2_3_gjvhb7.webp'/>
                   <Parrafo1>
                     <TituloParrafos>LÍNEA TRADICIONAL</TituloParrafos>
@@ -144,7 +144,7 @@ function ElementalPromoMobile() {
                     </TextoParrafo>
                     </Parrafo1>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide style={{textAlign:'center'}}>
                   <img alt='slide3'src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654116642/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Mobile/SLIDE_3_rck35d.webp'/>
                   <Parrafo1>
                     <TituloParrafos>LÍNEA DESIGN</TituloParrafos>
@@ -158,11 +158,9 @@ function ElementalPromoMobile() {
                      </Parrafo1>
                 </SwiperSlide>
               </Swiper>
-            </SubBoxCarusel>
         </Seccion2>
         <Seccion3>
-          <BoxBeneficios>
-            <div>
+           <AjusteMobile>
               <Beneficio>
                 <Icono alt='icono1' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654198416/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Group_visoou.png'/>
                 <Subtitulo>Rápida <br/> realización</Subtitulo> 
@@ -171,8 +169,8 @@ function ElementalPromoMobile() {
                <Icono alt='icono2' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654198416/ELEMENTAL%20CONSTRUCTORA/LandingPromo/icono2_qxpega.png'/>
                 <Subtitulo>Valores <br/> Competitivos</Subtitulo> 
               </Beneficio>
-            </div>
-            <div>
+           </AjusteMobile>
+           <AjusteMobile>
               <Beneficio>
                <Icono alt='icono3' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654198416/ELEMENTAL%20CONSTRUCTORA/LandingPromo/icono4_zv8ysi.png'/>
                <Subtitulo>Financiación <br/> Personalizada</Subtitulo> 
@@ -181,12 +179,11 @@ function ElementalPromoMobile() {
                 <Icono alt='icono4' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654198416/ELEMENTAL%20CONSTRUCTORA/LandingPromo/icono3_z8hehr.png'/>
                 <Subtitulo>Variedad  <br/> De Servicios</Subtitulo> 
               </Beneficio>
-            </div>    
-          </BoxBeneficios>
-          <Boxmapa>
-            <FotoPlano alt='planocasa' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654116683/ELEMENTAL%20CONSTRUCTORA/LandingPromo/imagen_1-24-min_ajpd4b.png'/>
-          </Boxmapa>
+            </AjusteMobile>
         </Seccion3>
+        <Seccion7>
+           <FotoPlano alt='planocasa' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654116683/ELEMENTAL%20CONSTRUCTORA/LandingPromo/imagen_1-24-min_ajpd4b.png'/>
+        </Seccion7>
         <Seccion4>
            <BoxForm onSubmit={handleSubmit(onSubmit)}>
               <SeparadorForm>
@@ -198,11 +195,7 @@ function ElementalPromoMobile() {
                     <LabelInput htmlFor="name">NOMBRE</LabelInput>
                     <InputForm
                       {...register("name", {
-                        required: "this is a required",
-                        maxLength: {
-                          value: 2,
-                          message: "Max length is 2"
-                        }
+                        required: "Campo Requerido",
                       })}
                     />
                     {errors.name && <LabelErrores>{errors.name.message}</LabelErrores>}
@@ -211,11 +204,7 @@ function ElementalPromoMobile() {
                     <InputForm
                        type="number"
                       {...register("Phone", {
-                        required: "this is required",
-                        minLength: {
-                          value: 2,
-                          message: "Min length is 2"
-                        }
+                        required: "Campo Requerido",
                       })}
                     />
                     {errors.Phone && <LabelErrores>{errors.Phone.message}</LabelErrores>}
@@ -224,10 +213,10 @@ function ElementalPromoMobile() {
                     <InputForm
                       type="text"
                       {...register("correo", {
-                        required: "this is required",
+                        required: "Campo Requerido",
                         pattern: {
                           value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                          message: "Invalid email address"
+                          message: "Correo Invalido"
                         }
                       })}
                     />
@@ -242,21 +231,21 @@ function ElementalPromoMobile() {
                       LÍNEA MODULAR
                       <Texto4>Una opción inmediata y económica.</Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck type="checkbox" placeholder="Linea Modular" {...register("Linea Modular", {required: true})} />
+                    <InputFormCheck type="checkbox"  {...register("lineaModular1", {required: true})} />
                   </AjusteCheckBox> 
                   <AjusteCheckBox> 
                     <LabelInputCheck htmlFor="lineaTradicional1">
                       LÍNEA TRADICIONAL
                       <Texto4>Modelos en construcción húmeda. </Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck type="checkbox" placeholder="Linea Modular" {...register("Linea Modular", {required: true})} />
+                    <InputFormCheck type="checkbox"  {...register("lineaTradicional1", {required: true})} />
                   </AjusteCheckBox>
                   <AjusteCheckBox>
                     <LabelInputCheck htmlFor="lineaDesign1">
                       LÍNEA DESIGN
                       <Texto4>Diseñá tu casa a tu medida. </Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck  type="checkbox" placeholder="Linea Modular" {...register("Linea Modular", {required: true})} />
+                    <InputFormCheck  type="checkbox"  {...register("lineaDesign1", {required: true})} />
                   </AjusteCheckBox>  
               </SeparadorForm>
               <SeparadorForm>

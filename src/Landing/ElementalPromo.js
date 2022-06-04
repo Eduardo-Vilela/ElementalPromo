@@ -12,8 +12,8 @@ import { BoxPrincipal,
   BoxTitulo,
   BoxCarrousel,
   BoxParrafos,
-  BoxCasita,
-  BoxFamilias,
+  BoxDiagonal,
+  BoxDiagonal1,
   Titulo,
   Container,
   Parrafo1,
@@ -34,7 +34,7 @@ import { BoxPrincipal,
   Texto2,
   Texto3,
   Texto4,
-  BoxJoven,
+  Seccion6,
   Joven,
   BoxForm,
   BoxLogo,
@@ -52,6 +52,7 @@ import { BoxPrincipal,
   SubBoxLogo,
   BoxMobile,
   LabelErrores,
+  AjusteMobile,
 
 } from './Elements'
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -125,11 +126,8 @@ function ElementalPromo() {
                     <LabelInput htmlFor="Nombre">NOMBRE</LabelInput>
                     <InputForm
                       {...register("Nombre", {
-                        required: "this is a required",
-                        maxLength: {
-                          value: 2,
-                          message: "Max length is 2"
-                        }
+                        required: "Campo Requerido",
+
                       })}
                     />
                     {errors.Nombre && <LabelErrores>{errors.Nombre.message}</LabelErrores>}
@@ -138,11 +136,7 @@ function ElementalPromo() {
                     <InputForm
                        type="number"
                       {...register("Telefono", {
-                        required: "this is required",
-                        minLength: {
-                          value: 2,
-                          message: "Min length is 2"
-                        }
+                        required: "Campo Requerido",
                       })}
                     />
                     {errors.Telefono && <LabelErrores>{errors.Telefono.message}</LabelErrores>}
@@ -151,10 +145,10 @@ function ElementalPromo() {
                     <InputForm
                       type="text"
                       {...register("email", {
-                        required: "this is required",
+                        required: "Campo Requerido",
                         pattern: {
                           value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                          message: "Invalid email address"
+                          message: "Correo Invalido"
                         }
                       })}
                     />
@@ -169,21 +163,21 @@ function ElementalPromo() {
                       LÍNEA MODULAR
                       <Texto4>Una opción inmediata y económica.</Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck type="checkbox" placeholder="Linea Modular" {...register("Linea Modular", {required: true})} />
+                    <InputFormCheck type="checkbox" value='lineaModular' {...register("Linea", {required: true})} />
                   </AjusteCheckBox> 
                   <AjusteCheckBox> 
                     <LabelInputCheck htmlFor="lineaTradicional">
                       LÍNEA TRADICIONAL
                       <Texto4>Modelos en construcción húmeda. </Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck type="checkbox" placeholder="Linea Modular" {...register("Linea Modular", {required: true})} />
+                    <InputFormCheck type="checkbox" value='lineaTradicional' {...register("Linea ", {required: true})} />
                   </AjusteCheckBox>
                   <AjusteCheckBox>
                     <LabelInputCheck htmlFor="lineaDesign">
                       LÍNEA DESIGN
                       <Texto4>Diseñá tu casa a tu medida. </Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck  type="checkbox" placeholder="Linea Modular" {...register("Linea Modular", {required: true})} />
+                    <InputFormCheck  type="checkbox" value='lineaDesign' {...register("Linea", {required: true})} />
                   </AjusteCheckBox>  
               </SeparadorForm>
               <SeparadorForm>
@@ -254,26 +248,28 @@ function ElementalPromo() {
                     </BoxParrafos>
                   </Parte1>
                   <Parte2>
-                    <BoxCasita>
-                       <img width='35' height='35' alt='icono' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202015/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Frame_ullzbf.png'/>
-                       {/* <img  alt='linea' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202690/ELEMENTAL%20CONSTRUCTORA/LandingPromo/linea_hmr0je.png'/> */}
-                       <TituloCasita>
-                        CONSTRUIMOS LA<br/>
-                         CASA DE TUS<br/> 
-                        SUEÑOS A TU MEDIDA,<br/> 
-                        CON LA MEJOR <br/>
-                        FINANCIACION.
-                       </TituloCasita>
-                    </BoxCasita>
-                    <BoxFamilias>
-                       <Texto1>18</Texto1>
-                       <Texto2>FAMILIAS NOS <br/>ELIGIERON</Texto2>
-                       <Texto1>84</Texto1>
-                       <Texto2>EN PROMEDIO MENSUAL <br/>DE FORMULARIOS <br/>RECIBIDOS</Texto2>
-                    </BoxFamilias>
-                    <BoxJoven>
-                     <Joven>SOMOS UNA<br/> EMPRESA JOVEN, <br/>A PURA EXPANSION Y <br/>CRECIMIENTO.</Joven> 
-                    </BoxJoven>
+                  <BoxDiagonal1>
+                    <div style={{padding:'20px' , height:'50%'}}>
+                      <img width='35' height='35' alt='icono' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202015/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Frame_ullzbf.png'/>
+                                {/* <img  alt='linea' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202690/ELEMENTAL%20CONSTRUCTORA/LandingPromo/linea_hmr0je.png'/> */}
+                      <TituloCasita>
+                      CONSTRUIMOS LA<br/>
+                        CASA DE TUS<br/> 
+                      SUEÑOS A TU MEDIDA,<br/> 
+                      CON LA MEJOR <br/>
+                      FINANCIACION.
+                      </TituloCasita>
+                      </div> 
+                    <BoxDiagonal>
+                      <Texto1>18</Texto1>
+                      <Texto2>FAMILIAS NOS <br/>ELIGIERON</Texto2>
+                      <Texto1>84</Texto1>
+                      <Texto2>EN PROMEDIO MENSUAL <br/>DE FORMULARIOS <br/>RECIBIDOS</Texto2>
+                  </BoxDiagonal>
+                  </BoxDiagonal1>
+                  <Seccion6>
+                  <TituloParrafos>SOMOS UNA<br/> EMPRESA JOVEN, <br/>A PURA EXPANSION Y <br/>CRECIMIENTO.</TituloParrafos>
+                  </Seccion6>
                   </Parte2>               
                 </Box2>
               </BoxArriba>
@@ -282,6 +278,7 @@ function ElementalPromo() {
 
                 </Boxvacio>
                 <BoxBeneficios>
+                  <AjusteMobile>
                    <Beneficio>
                      <Icono alt='icono1' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654198416/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Group_visoou.png'/>
                      <Subtitulo>Rápida <br/> realización</Subtitulo> 
@@ -290,6 +287,8 @@ function ElementalPromo() {
                      <Icono alt='icono2' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654198416/ELEMENTAL%20CONSTRUCTORA/LandingPromo/icono2_qxpega.png'/>
                      <Subtitulo>Valores <br/> Competitivos</Subtitulo> 
                    </Beneficio>
+                  </AjusteMobile>
+                  <AjusteMobile>
                    <Beneficio>
                      <Icono alt='icono3' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654198416/ELEMENTAL%20CONSTRUCTORA/LandingPromo/icono4_zv8ysi.png'/>
                      <Subtitulo>Financiación <br/> Personalizada</Subtitulo> 
@@ -298,6 +297,7 @@ function ElementalPromo() {
                      <Icono alt='icono4' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654198416/ELEMENTAL%20CONSTRUCTORA/LandingPromo/icono3_z8hehr.png'/>
                      <Subtitulo>Variedad  <br/> De Servicios</Subtitulo> 
                    </Beneficio>
+                   </AjusteMobile>
                 </BoxBeneficios>
                 <Boxmapa>
                    <FotoPlano alt='planocasa' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654116683/ELEMENTAL%20CONSTRUCTORA/LandingPromo/imagen_1-24-min_ajpd4b.png'/>

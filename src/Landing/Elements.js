@@ -38,8 +38,8 @@ background-size: cover;
   @media (min-width: 768px) and (max-width: 1199px) { 
   display: none;
    }
-   @media (min-width: 1200px) and (max-width: 1400px) { 
-     display:none;
+   @media (min-width: 1200px) and (max-width: 2000px) { 
+     display:block;
    }
 
 `
@@ -101,32 +101,13 @@ width: 70%;
 height: 700px;
 `
 export const Parte2 = styled.div`
-height:75vh;
-width: 15vw;
-position:relative;
+height: 70vh;
+width: 20%;
 margin: auto;
 display: flex;
 flex-direction:column;
 justify-content: center;
 
- &:after{
-    position: absolute;
-    top: 0%;
-    left: 0px;
-    content: '';
-    height: 208px;
-    width: 0;
-    border-left: 15vw solid #1A1A1A;
-    border-bottom: 5vw solid transparent;
-    border-top: 0px solid transparent;
-    overflow: hidden;
-  }
-  @media (min-width: 768px) and (max-width: 1199px) { 
-    &:after{
-        height: 150px;
-    }
-}
-@media (min-width: 1200px) and (max-width: 2000px) { 
 
   }
 `
@@ -284,7 +265,7 @@ font-weight: 600;
 `
 export const Texto4 = styled.h3`
 font-family: 'Hind Siliguri', sans-serif;
-font-size: 11px;
+font-size: 10px;
 font-weight: 600;
 line-height: 0;
 @media (max-width: 480px) { 
@@ -293,6 +274,7 @@ line-height: 0;
   @media (max-width: 767px) { 
     font-size: 9px;
   }
+
 `
 export const Boxmapa = styled.div`
 width: 50%;
@@ -319,25 +301,28 @@ justify-content: center;
 `
 export const BoxBeneficios = styled.div`
 width: 25%;
-height: auto;
+height: 300px;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
 
 @media (max-width: 480px) { 
     width: 100%;
+    height: 430px;
     display: flex;
     flex-direction: column;
     justify-content: center;
    }
    @media (max-width: 767px) { 
     width: 100%;
+    height: 430px;
     display: flex;
     flex-direction: column;
     justify-content: center;
    }
    @media (min-width: 768px) and (max-width: 1199px) { 
     width: 100%;
+    height: 430px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -356,15 +341,17 @@ text-align: center;
 align-self: end;
 @media (max-width: 480px) { 
     width: 100%;
-    height: 50%;
+    height: 80%;
+
   }
   @media (max-width: 767px) { 
     width: 100%;
-    height: 50%;
+    height: 80%;
   }
 @media (min-width: 768px) and (max-width: 1199px) { 
     width: 100%;
     height: auto;
+    margin-bottom: 50px;
 }
 @media (min-width: 1200px) and (max-width: 2000px) { 
     
@@ -418,7 +405,7 @@ font-family: 'Hind Siliguri', sans-serif;
 font-size: 15px;
 font-weight: 200;
 @media (min-width: 768px) and (max-width: 1199px) { 
-    font-size: 15px;
+    font-size: 13px;
 }
 @media (min-width: 1200px) and (max-width: 2000px) { 
     
@@ -702,8 +689,11 @@ margin: auto;
 display: block;
  }
  @media (min-width: 1200px) and (max-width: 2000px) { 
-   display:none;
- }
+  display: none;
+   }
+   @media (min-width: 2000px) and (max-width: 3000px) { 
+    display: none;
+     }
 `
 
 
@@ -717,8 +707,8 @@ background-size: contain;
 `
 
 export const  Seccion1 = styled.div`
-width: 90%;
-height: 300px;
+width: 100%;
+height: 250px;
 margin: auto;
 display: flex;
 flex-direction: column;
@@ -769,14 +759,17 @@ width: 80%;
 height: 200px;
 margin: auto;
 text-align: center;
+
+@media (min-width: 768px) and (max-width: 1199px) { 
+  width: 20vh;
+ }
 `
 
 export const BoxMobile2 = styled.div`
-width: 90%;
-height: 150px;
+width: 80%;
+height: 70%;
 margin: auto;
 background: #F5F2F2;
-margin-top: 150px;
 `
 
 export const BoxDiagonal = styled.div`
@@ -787,7 +780,7 @@ text-align: center;
 `
 export const BoxDiagonal1 = styled.div`
 width: 100%;
-height: 330px;
+height: 40vh;
 background: black;
 clip-path: polygon(0.5% 0%,101.5% 0%,187% 27%,0% 100%);
 display: flex;
@@ -795,15 +788,59 @@ flex-direction: column;
 justify-content: flex-start;
 text-align: center;
 align-items: center;
-
-
-@media (min-width: 768px) and (max-width: 1199px) { 
-    height: 280px;
+@media (max-width: 480px) { 
+  height: 300px;
 }
+@media (max-width: 767px) { 
+  height: 300px;
+}
+@media (min-width: 768px) and (max-width: 1199px) { 
+  height: 300px;
+
+}
+@media (min-width: 1200px) and (max-width: 2000px) { 
+  height: 550px;
+  clip-path: polygon(0.5% 0%,101.5% 0%,187% 27%,0% 60%);
+
+}
+
 `
 export const LabelErrores = styled.p`
 color: red;
 font-size: 12px;
 font-family: Poppins;
 font-Weight: 600;
+`
+
+export const AjusteMobile = styled.div`
+width: 100%;
+height: 50%;
+display: flex;
+
+`
+export const BoxMobile3 = styled.div`
+width: 90%;
+height 30%;
+margin: auto;
+background: black;
+display: flex;
+flex-direction: row;
+justify-content: center;
+`
+
+export const Seccion7 = styled.div`
+width: 100%;
+height: 5%;
+@media (max-width: 480px) { 
+  height: 5%;
+}
+@media (max-width: 767px) { 
+  height: 5%;
+}
+@media (min-width: 768px) and (max-width: 1199px) { 
+  height: 12%;
+}
+@media (min-width: 1200px) and (max-width: 2000px) { 
+  height: 12%;
+}
 `
