@@ -61,7 +61,7 @@ import { Autoplay } from "swiper";
 import { useForm } from "react-hook-form";
 import ElementalPromoMobile from './ElementalPromoMobile';
 import axios from "axios";
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 
 import "swiper/css/pagination";
@@ -79,30 +79,30 @@ function ElementalPromo() {
     });
   const onSubmitPromo = (data, e) => {
     //alert(JSON.stringify(data));
-    axios.post(`https://promo.elementalconstructora.com.ar/webApi/public/FormularioPromoElemental`, data)
+    axios.post(`https://prueba.elementalconstructora.com.ar/webApi/public/FormularioPromoElemental`, data)
       .then(function (response) {
         console.log(response.data);
-        // toast.success('Formulario enviado!', {
-        //   position: "top-right",
-        //   autoClose: 2000,
-        //   hideProgressBar: false,
-        //   closeOnClick: true,
-        //   pauseOnHover: true,
-        //   draggable: true,
-        //   progress: undefined,
-        //   });
+        toast.success('Formulario enviado!', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
+          reset()
       })
-      reset()
       .catch(function (error) {
-        // toast.error('No se pudo enviar el formulario!', {
-        //   position: "top-right",
-        //   autoClose: 2000,
-        //   hideProgressBar: false,
-        //   closeOnClick: true,
-        //   pauseOnHover: true,
-        //   draggable: true,
-        //   progress: undefined,
-        //   });
+        toast.error('No se pudo enviar el formulario!', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
       });
 
     reset()
@@ -163,21 +163,21 @@ function ElementalPromo() {
                       LÍNEA MODULAR
                       <Texto4>Una opción inmediata y económica.</Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck {...register("linea")} type="radio" value="lineaModular" />
+                    <InputFormCheck type="checkbox"  value='Modular' {...register("Linea", {required: true})} />
                   </AjusteCheckBox> 
                   <AjusteCheckBox> 
                     <LabelInputCheck htmlFor="lineaTradicional">
                       LÍNEA TRADICIONAL
                       <Texto4>Modelos en construcción húmeda. </Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck {...register("linea ")} type="radio" value="lineaTradicional" />
+                    <InputFormCheck type="checkbox" value='Tradicional' {...register("Linea", {required: true})} />
                   </AjusteCheckBox>
                   <AjusteCheckBox>
                     <LabelInputCheck htmlFor="lineaDesign">
                       LÍNEA DESIGN
                       <Texto4>Diseñá tu casa a tu medida. </Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck {...register("linea", { required: true })} type="radio" value="lineaDesign" />
+                    <InputFormCheck  type="checkbox"  value='Design' {...register("Linea", {required: true})} />
                   </AjusteCheckBox>  
               </SeparadorForm>
               <SeparadorForm>

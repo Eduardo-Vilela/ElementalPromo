@@ -54,7 +54,7 @@ import "swiper/css/pagination";
 import "swiper/css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 function ElementalPromoMobile() {
 
@@ -69,29 +69,29 @@ function ElementalPromoMobile() {
   
   const onSubmit = (data,e) => {
     //alert(JSON.stringify(data));
-    axios.post(`https://promo.elementalconstructora.com.ar/webApi/public/FormularioPromoElementalMobile`, data)
+    axios.post(`https://prueba.elementalconstructora.com.ar/webApi/public/FormularioPromoElementalMobile`, data)
       .then(function (response) {
-        // toast.success('Formulario enviado!', {
-        //   position: "top-right",
-        //   autoClose: 2000,
-        //   hideProgressBar: false,
-        //   closeOnClick: true,
-        //   pauseOnHover: true,
-        //   draggable: true,
-        //   progress: undefined,
-        //   });
+        toast.success('Formulario enviado!', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
+          reset()
       })
-      reset()
       .catch(function (error) {
-        // toast.error('No se pudo enviar el formulario!', {
-        //   position: "top-right",
-        //   autoClose: 2000,
-        //   hideProgressBar: false,
-        //   closeOnClick: true,
-        //   pauseOnHover: true,
-        //   draggable: true,
-        //   progress: undefined,
-        //   });
+        toast.error('No se pudo enviar el formulario!', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
       });
 
     reset()
@@ -233,21 +233,21 @@ function ElementalPromoMobile() {
                       LÍNEA MODULAR
                       <Texto4>Una opción inmediata y económica.</Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck {...register("linea2")}  type="radio" value='lineaModular1'/>
+                    <InputFormCheck type="checkbox" value='Modular1'  {...register("linea1", {required: true})} />
                   </AjusteCheckBox> 
                   <AjusteCheckBox> 
                     <LabelInputCheck htmlFor="lineaTradicional1">
                       LÍNEA TRADICIONAL
                       <Texto4>Modelos en construcción húmeda. </Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck {...register("linea2")} type="radio" value='lineaTradicional1' />
+                    <InputFormCheck type="checkbox" value='Tradicional1'  {...register("linea1", {required: true})} />
                   </AjusteCheckBox>
                   <AjusteCheckBox>
                     <LabelInputCheck htmlFor="lineaDesign1">
                       LÍNEA DESIGN
                       <Texto4>Diseñá tu casa a tu medida. </Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck {...register("linea2")}  type="radio" value='lineaDesign1' />
+                    <InputFormCheck  type="checkbox" value='Design1'   {...register("linea1", {required: true})} />
                   </AjusteCheckBox>  
               </SeparadorForm>
               <ContainerButton>

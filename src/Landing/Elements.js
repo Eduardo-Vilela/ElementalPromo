@@ -828,6 +828,7 @@ export const LabelErrores = styled.p`
   font-size: 12px;
   font-family: Poppins;
   font-Weight: 600;
+  font-family: 'Hind Siliguri', sans-serif;
   margin: 4px !important; 
 `
 
