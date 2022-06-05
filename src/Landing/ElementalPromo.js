@@ -2,6 +2,7 @@ import React from 'react'
 import { BoxPrincipal,
   BoxSecundario,
   BoxDerecha,
+  BoxDiag,  
   BoxIzquierda,
   BoxAbajo,
   BoxArriba,
@@ -57,12 +58,14 @@ import { BoxPrincipal,
 } from './Elements'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
-import "swiper/css/pagination";
-import "swiper/css";
 import { useForm } from "react-hook-form";
 import ElementalPromoMobile from './ElementalPromoMobile';
 import axios from "axios";
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
+
+
+import "swiper/css/pagination";
+import "swiper/css";
 
 function ElementalPromo() {
 
@@ -71,39 +74,39 @@ function ElementalPromo() {
     reset,
     formState: { errors },
     handleSubmit
-  } = useForm({
-    mode: "onChange"
-  });
-  const onSubmit = (data,e) => {
+    } = useForm({
+      mode: "onChange"
+    });
+  const onSubmitPromo = (data, e) => {
     //alert(JSON.stringify(data));
-    axios.post(`https://elementalconstructora.com.ar/webApi/public/FormularioPromoElemental`, data)
+    axios.post(`https://promo.elementalconstructora.com.ar/webApi/public/FormularioPromoElemental`, data)
       .then(function (response) {
-        toast.success('Formulario enviado!', {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          });
+        console.log(response.data);
+        // toast.success('Formulario enviado!', {
+        //   position: "top-right",
+        //   autoClose: 2000,
+        //   hideProgressBar: false,
+        //   closeOnClick: true,
+        //   pauseOnHover: true,
+        //   draggable: true,
+        //   progress: undefined,
+        //   });
       })
       reset()
       .catch(function (error) {
-        toast.error('No se pudo enviar el formulario!', {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          });
+        // toast.error('No se pudo enviar el formulario!', {
+        //   position: "top-right",
+        //   autoClose: 2000,
+        //   hideProgressBar: false,
+        //   closeOnClick: true,
+        //   pauseOnHover: true,
+        //   draggable: true,
+        //   progress: undefined,
+        //   });
       });
 
     reset()
   };
-
 
   return (
     <>
@@ -112,11 +115,9 @@ function ElementalPromo() {
          <BoxSecundario>
            <BoxDerecha>
              <BoxLogo>
-              <SubBoxLogo>
-                <img width='80%' alt='logo' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654218679/ELEMENTAL%20CONSTRUCTORA/LandingPromo/222_oule7w.svg'/>
-              </SubBoxLogo>
+              <img width='60%' alt='logo' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654218679/ELEMENTAL%20CONSTRUCTORA/LandingPromo/222_oule7w.svg'/>
              </BoxLogo>
-             <BoxForm onSubmit={handleSubmit(onSubmit)}>
+             <BoxForm onSubmit={handleSubmit(onSubmitPromo)}>
               <SeparadorForm>
                     <TituloForm>ELEGÍ COMO VIVIR,</TituloForm>
                     <Tituloform3>ELEGÍ ELEMENTAL</Tituloform3>
@@ -126,17 +127,16 @@ function ElementalPromo() {
                     <LabelInput htmlFor="Nombre">NOMBRE</LabelInput>
                     <InputForm
                       {...register("Nombre", {
-                        required: "Campo Requerido",
-
+                        required: "Ingrese su nombre",
                       })}
                     />
                     {errors.Nombre && <LabelErrores>{errors.Nombre.message}</LabelErrores>}
 
-                    <LabelInput htmlFor="Telefono">TELEFONO</LabelInput>
+                    <LabelInput htmlFor="Telefono">TELÉFONO</LabelInput>
                     <InputForm
                        type="number"
                       {...register("Telefono", {
-                        required: "Campo Requerido",
+                        required: "Ingrese un celular",
                       })}
                     />
                     {errors.Telefono && <LabelErrores>{errors.Telefono.message}</LabelErrores>}
@@ -145,7 +145,7 @@ function ElementalPromo() {
                     <InputForm
                       type="text"
                       {...register("email", {
-                        required: "Campo Requerido",
+                        required: "Correo Invalido",
                         pattern: {
                           value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                           message: "Correo Invalido"
@@ -155,7 +155,7 @@ function ElementalPromo() {
                     {errors.email && <LabelErrores>{errors.email.message}</LabelErrores>}
               </SeparadorForm2>
               <SeparadorForm>
-                      <TituloForm2>¿EN CUAL DE NUESTRAS VIVIENDAS <br/> ESTAS INTERESADO?</TituloForm2>
+                      <TituloForm2>¿EN CÚAL DE NUESTRAS VIVIENDAS <br/> ESTAS INTERESADO?</TituloForm2>
               </SeparadorForm>
               <SeparadorForm>
                   <AjusteCheckBox>
@@ -163,26 +163,26 @@ function ElementalPromo() {
                       LÍNEA MODULAR
                       <Texto4>Una opción inmediata y económica.</Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck type="checkbox" value='lineaModular' {...register("Linea", {required: true})} />
+                    <InputFormCheck type="checkbox" value='lineaModular' {...register("Linea")} />
                   </AjusteCheckBox> 
                   <AjusteCheckBox> 
                     <LabelInputCheck htmlFor="lineaTradicional">
                       LÍNEA TRADICIONAL
                       <Texto4>Modelos en construcción húmeda. </Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck type="checkbox" value='lineaTradicional' {...register("Linea ", {required: true})} />
+                    <InputFormCheck type="checkbox" value='lineaTradicional' {...register("Linea ")} />
                   </AjusteCheckBox>
                   <AjusteCheckBox>
                     <LabelInputCheck htmlFor="lineaDesign">
                       LÍNEA DESIGN
                       <Texto4>Diseñá tu casa a tu medida. </Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck  type="checkbox" value='lineaDesign' {...register("Linea", {required: true})} />
+                    <InputFormCheck  type="checkbox" value='lineaDesign' {...register("Linea")} />
                   </AjusteCheckBox>  
               </SeparadorForm>
               <SeparadorForm>
-                    <ButtonForm type="submit" />
-               </SeparadorForm>
+                    <ButtonForm type="submit" value="ENVIAR" />
+              </SeparadorForm>
              </BoxForm>
            </BoxDerecha>
            <BoxIzquierda>
@@ -201,11 +201,11 @@ function ElementalPromo() {
                     <BoxCarrousel>
                       <SubBoxCarusel>
                         <Swiper
-                          spaceBetween={30}
-                          autoplay={{
-                            delay: 1500,
-                            disableOnInteraction: false,
-                          }}
+                          spaceBetween={20}
+                          // autoplay={{
+                          //   delay: 1500,
+                          //   disableOnInteraction: false,
+                          // }}
                           modules={[Autoplay]}
                           className="mySwiper"
                         >
@@ -247,28 +247,28 @@ function ElementalPromo() {
                       </Parrafo3>
                     </BoxParrafos>
                   </Parte1>
-                  <Parte2>
+                <Parte2>
                   <BoxDiagonal1>
-                    <div style={{padding:'20px' , height:'50%'}}>
+                    <BoxDiag>
                       <img width='35' height='35' alt='icono' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202015/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Frame_ullzbf.png'/>
                                 {/* <img  alt='linea' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202690/ELEMENTAL%20CONSTRUCTORA/LandingPromo/linea_hmr0je.png'/> */}
                       <TituloCasita>
-                      CONSTRUIMOS LA<br/>
-                        CASA DE TUS<br/> 
-                      SUEÑOS A TU MEDIDA,<br/> 
-                      CON LA MEJOR <br/>
-                      FINANCIACION.
+                        CONSTRUIMOS LA<br/>
+                          CASA DE TUS<br/> 
+                        SUEÑOS A TU MEDIDA,<br/> 
+                        CON LA MEJOR <br/>
+                        FINANCIACIÓN.
                       </TituloCasita>
-                      </div> 
+                    </BoxDiag> 
                     <BoxDiagonal>
                       <Texto1>18</Texto1>
                       <Texto2>FAMILIAS NOS <br/>ELIGIERON</Texto2>
                       <Texto1>84</Texto1>
                       <Texto2>EN PROMEDIO MENSUAL <br/>DE FORMULARIOS <br/>RECIBIDOS</Texto2>
-                  </BoxDiagonal>
+                    </BoxDiagonal>
                   </BoxDiagonal1>
                   <Seccion6>
-                  <TituloParrafos>SOMOS UNA<br/> EMPRESA JOVEN, <br/>A PURA EXPANSION Y <br/>CRECIMIENTO.</TituloParrafos>
+                    <TituloParrafos>SOMOS UNA<br/> EMPRESA JOVEN, <br/>A PURA EXPANSION Y <br/>CRECIMIENTO.</TituloParrafos>
                   </Seccion6>
                   </Parte2>               
                 </Box2>

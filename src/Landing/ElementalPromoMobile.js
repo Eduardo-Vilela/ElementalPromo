@@ -44,6 +44,7 @@ LabelErrores,
 AjusteMobile,
 BoxMobile3,
 Seccion7,
+ContainerButton,
  
 } from './Elements'
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -52,8 +53,7 @@ import "swiper/css/pagination";
 import "swiper/css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { toast } from 'react-toastify';
-
+// import { toast } from 'react-toastify';
 
 function ElementalPromoMobile() {
 
@@ -68,34 +68,33 @@ function ElementalPromoMobile() {
   
   const onSubmit = (data,e) => {
     //alert(JSON.stringify(data));
-    axios.post(`https://elementalconstructora.com.ar/webApi/public/FormularioPromoElementalMobile`, data)
+    axios.post(`https://promo.elementalconstructora.com.ar/webApi/public/FormularioPromoElementalMobile`, data)
       .then(function (response) {
-        toast.success('Formulario enviado!', {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          });
+        // toast.success('Formulario enviado!', {
+        //   position: "top-right",
+        //   autoClose: 2000,
+        //   hideProgressBar: false,
+        //   closeOnClick: true,
+        //   pauseOnHover: true,
+        //   draggable: true,
+        //   progress: undefined,
+        //   });
       })
       reset()
       .catch(function (error) {
-        toast.error('No se pudo enviar el formulario!', {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          });
+        // toast.error('No se pudo enviar el formulario!', {
+        //   position: "top-right",
+        //   autoClose: 2000,
+        //   hideProgressBar: false,
+        //   closeOnClick: true,
+        //   pauseOnHover: true,
+        //   draggable: true,
+        //   progress: undefined,
+        //   });
       });
 
     reset()
   };
-
 
   return (
     <>
@@ -195,7 +194,7 @@ function ElementalPromoMobile() {
                     <LabelInput htmlFor="name">NOMBRE</LabelInput>
                     <InputForm
                       {...register("name", {
-                        required: "Campo Requerido",
+                        required: "Ingrese su nombre",
                       })}
                     />
                     {errors.name && <LabelErrores>{errors.name.message}</LabelErrores>}
@@ -204,7 +203,7 @@ function ElementalPromoMobile() {
                     <InputForm
                        type="number"
                       {...register("Phone", {
-                        required: "Campo Requerido",
+                        required: "Ingrese un celular",
                       })}
                     />
                     {errors.Phone && <LabelErrores>{errors.Phone.message}</LabelErrores>}
@@ -213,7 +212,7 @@ function ElementalPromoMobile() {
                     <InputForm
                       type="text"
                       {...register("correo", {
-                        required: "Campo Requerido",
+                        required: "Correo Invalido",
                         pattern: {
                           value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                           message: "Correo Invalido"
@@ -222,9 +221,9 @@ function ElementalPromoMobile() {
                     />
                     {errors.correo && <LabelErrores>{errors.correo.message}</LabelErrores>}
               </SeparadorForm2>
-              <SeparadorForm>
+              <ContainerButton>
                       <TituloForm2>¿EN CUAL DE NUESTRAS VIVIENDAS <br/> ESTAS INTERESADO?</TituloForm2>
-              </SeparadorForm>
+              </ContainerButton>
               <SeparadorForm>
                   <AjusteCheckBox>
                     <LabelInputCheck htmlFor="lineaModular1">
@@ -248,9 +247,9 @@ function ElementalPromoMobile() {
                     <InputFormCheck  type="checkbox"  {...register("lineaDesign1", {required: true})} />
                   </AjusteCheckBox>  
               </SeparadorForm>
-              <SeparadorForm>
-                    <ButtonForm type="submit" />
-               </SeparadorForm>
+              <ContainerButton>
+                    <ButtonForm type="submit" value="ENVIAR" />
+               </ContainerButton>
              </BoxForm>
         </Seccion4>
         <Seccion5>

@@ -24,7 +24,6 @@ export const Container = styled.div`
 
 export const BoxPrincipal = styled.div`
 width: 100%;
-height: 1000px;
 background: white;
 background-image: url(https://res.cloudinary.com/grupo-delsud/image/upload/v1654171604/ELEMENTAL%20CONSTRUCTORA/LandingPromo/FONDO_WEB_dydqou.png);
 background-size: cover;
@@ -46,7 +45,6 @@ background-size: cover;
 
 export const BoxSecundario = styled.div`
 width: 100%;
-height: 1000px;
 display: flex;
 flex-direction: row;
 justify-content: center;
@@ -55,27 +53,24 @@ position: relative;
 `
 
 export const BoxDerecha = styled.div`
-width: 25%;
-height: 1000px; 
-background:#F5F2F2;
-position: absolute;
-top: 0;
-bottom: 0;
-left: 80px;
-right: 0;
+  width: 30%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 80px;
+  right: 0;
 `
 export const BoxIzquierda = styled.div`
 width: 100%;
-height: 1000px;  
 `
 
 export const BoxAbajo = styled.div`
-width: 100%;
-height: 300px;  
-background-color: #1A1A1A;
-display: flex;
-flex-direction: row;
-justify-content: center;
+  width: 100%;
+  height: 282px;  
+  background-color: #1A1A1A;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 `
 export const BoxArriba = styled.div`
 width: 100%;
@@ -85,12 +80,12 @@ flex-direction: row;
 justify-content: center;
 `
 export const Box1 = styled.div`
-width: 30%;
+width: 35%;
 height: 700px;
 
 `
 export const Box2 = styled.div`
-width: 70%;
+width: 65%;
 height: 700px;
 display: flex;
 flex-direction: row;
@@ -101,9 +96,7 @@ width: 70%;
 height: 700px;
 `
 export const Parte2 = styled.div`
-height: 70vh;
 width: 20%;
-margin: auto;
 display: flex;
 flex-direction:column;
 justify-content: center;
@@ -116,20 +109,20 @@ width: 100%;
 height: 70px;
 `
 export const BoxCarrousel = styled.div`
-width: 100%;
-height: 400px;
-display: flex;
-flex-direction: row;
-justify-content: center;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 `
 export const BoxParrafos = styled.div`
-width: 80%;
+width: 90%;
 height: 200px;
 margin: auto;
 display: flex;
 flex-direction: row;
-justify-content: space-around;
-`
+justify-content: space-between;
+` 
 export const BoxCasita = styled.div`
 width: 90%;
 height: 26vh;
@@ -201,7 +194,7 @@ text-align: center;
 
 `
 export const Parrafo1 = styled.div`
-width: 25%;
+width: 30%;
 height: 200px;
 @media (max-width: 480px) { 
     width: 80%;
@@ -217,26 +210,26 @@ height: 200px;
   }
 `
 export const Parrafo2 = styled.div`
-width: 25%;
+width: 30%;
 height: 200px;
 `
 export const Parrafo3 = styled.div`
-width: 25%;
+width: 30%;
 height: 200px;
 `
 export const SubBoxCarusel = styled.div`
-width: 80%;
-height: 400px;
+  width: 90%;
+  height: 400px;
 
-@media (max-width: 480px) { 
-    width: 100%;
-  }
-  @media (max-width: 767px) { 
-    width: 100%;
-  }
-  @media (min-width: 768px) and (max-width: 1199px) {
-    
-  }
+  @media (max-width: 480px) { 
+      width: 100%;
+    }
+    @media (max-width: 767px) { 
+      width: 100%;
+    }
+    @media (min-width: 768px) and (max-width: 1199px) {
+      
+    }
 `
 export const TituloParrafos = styled.h3`
 font-family: 'Hind Siliguri', sans-serif;
@@ -265,20 +258,19 @@ font-weight: 600;
 `
 export const Texto4 = styled.h3`
 font-family: 'Hind Siliguri', sans-serif;
-font-size: 10px;
+font-size: 14px;
 font-weight: 600;
 line-height: 0;
 @media (max-width: 480px) { 
-    font-size: 9px;
+    font-size: 14px;
   }
   @media (max-width: 767px) { 
-    font-size: 9px;
+    font-size: 14px;
   }
 
 `
 export const Boxmapa = styled.div`
-width: 50%;
-height:300px;
+width: 35%;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -301,7 +293,6 @@ justify-content: center;
 `
 export const BoxBeneficios = styled.div`
 width: 25%;
-height: 300px;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
@@ -331,22 +322,20 @@ justify-content: center;
 `
 
 export const Boxvacio = styled.div`
-width: 35%;
-height:300px;
+width: 40%;
 `
 export const Beneficio = styled.div`
-width: 175px;
-height: 125px;
-text-align: center;
-align-self: end;
+  width: 175px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 @media (max-width: 480px) { 
     width: 100%;
-    height: 80%;
-
   }
   @media (max-width: 767px) { 
     width: 100%;
-    height: 80%;
   }
 @media (min-width: 768px) and (max-width: 1199px) { 
     width: 100%;
@@ -365,7 +354,7 @@ height: 40px;
 `
 export const Subtitulo = styled.p`
 font-family: 'Hind Siliguri', sans-serif;
-font-size: 17px;
+font-size: 15px;
 color: white;
 line-height: 15px;
 font-weight: 500;
@@ -378,23 +367,20 @@ font-weight: 500;
    }
 `
 export const FotoPlano = styled.img`
-width: 750px;
-height: 250px;
+  
 @media (max-width: 480px) { 
     width: 100%;
-    height: auto;
    }
    @media (max-width: 767px) { 
      width: 100%;
-     height: auto;
    }
 
 @media (min-width: 768px) and (max-width: 1199px) { 
-    width: 100%;
+    width: 90%;
     height: auto;
 }
 @media (min-width: 1200px) and (max-width: 2000px) { 
-    width: 100%;
+    width: 90%;
     height: auto;
   }
 `
@@ -413,7 +399,7 @@ font-weight: 200;
 `
 export const Texto1 = styled.h3`
 font-family: 'Hind Siliguri', sans-serif;
-font-size: 15px;
+font-size: 18px;
 line-height: 0;
 
 @media (min-width: 768px) and (max-width: 1199px) { 
@@ -421,17 +407,18 @@ line-height: 0;
 }
 `
 export const Texto3 = styled.h3`
-font-size: 15px;
-padding-left: 10px;
-color: black;
-font-weight: 600;
-font-family: 'Hind Siliguri', sans-serif;
-@media (max-width: 480px) { 
-    font-size: 12px;
-  }
+  color: black;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: 'Hind Siliguri', sans-serif;
+  line-height: 1.3em;
   @media (max-width: 767px) { 
-    font-size: 12px;
+    font-size: 14px;
   }
+  @media (max-width: 480px) { 
+    font-size: 14px;
+  }
+
 
 `
 export const Texto2 = styled.p`
@@ -440,6 +427,7 @@ color: black;
 font-weight: 600;
 font-family: 'Hind Siliguri', sans-serif;
 line-height: 12px;
+margin: 0px;
 
 @media (min-width: 768px) and (max-width: 1199px) { 
     font-size: 14px;
@@ -463,46 +451,39 @@ text-align: center;
 `
 
 export const BoxForm = styled.form`
-width: 100%;
-height: 850px;
-margin-top: 150px;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
+  width: 90%;
+  margin:auto;
+  padding: 20px 0px;
+  background:#F5F2F2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
 @media (max-width: 480px) { 
     width: 80%;
-    height: 800px;
     margin: auto;
     background: #F5F2F2;
    }
    @media (max-width: 767px) { 
      width: 80%;
-     height: 800px;
      margin: auto;
      background: #F5F2F2;
    }
    @media (min-width: 768px) and (max-width: 1199px) { 
     width: 80%;
-    height: 800px;
     margin: auto;
     background: #F5F2F2;
 }
 `
 
 export const BoxLogo = styled.div`
-width: 110%;
-height: 150px;
-background: #1B1B1B;  
-align-items: center;  
-display: flex;
-flex-direction: row;
-justify-content: center;
-position: absolute;
-top:0;
-bottom: 0;
-left: -18px;
-right: 0;
+  width: 100%;
+  height: 120px;
+  background: #1B1B1B; 
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
 
 @media (max-width: 480px) { 
     width: auto;
@@ -522,24 +503,24 @@ right: 0;
 `
 
 export const TituloForm = styled.p`
-font-family: 'Hind Siliguri', sans-serif;
-font-size: 25px;
-margin: 0;
-text-align: center;
-font-weight: 500;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 22px;
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
 @media (max-width: 480px) { 
-    font-size: 18px;
+    font-size: 20px;
   }
   @media (max-width: 767px) { 
-    font-size: 18px;
+    font-size: 20px;
   }
 `
 export const Tituloform3 = styled.p`
 font-family: 'Hind Siliguri', sans-serif;
-font-size: 35px;
+font-size: 24px;
 margin: 0;
 text-align: center;
-font-weight: 600;
+font-weight: 700;
 
 @media (max-width: 480px) { 
     font-size: 20px;
@@ -550,7 +531,7 @@ font-weight: 600;
 `
 export const TituloForm2 = styled.p`
 font-family: 'Hind Siliguri', sans-serif;
-font-size: 20px;
+font-size: 18px;
 margin: 0;
 text-align: center;
 font-weight: 600;
@@ -562,54 +543,64 @@ font-weight: 600;
   }
 `
 export const SeparadorForm = styled.div`
-width: 90%;
-height: 200px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-padding: 20px 0px 0px 0px;
-margin: auto;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-item: center;
+  margin:auto;
 
 @media (max-width: 480px) { 
-    height: 160px;
   }
-  @media (max-width: 767px) { 
-    height: 160px;
+  @media (max-width: 767px) {
   }
 `
-export const SeparadorForm2 = styled.div`
-width: 90%;
-height: 200px;
-margin: auto;
-display: flex;
-flex-direction: column;
-justify-content: center;
+
+export const ContainerButton = styled.div`
+  width: 85%;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-item: center;
+  margin:auto;
 
 @media (max-width: 480px) { 
-    height: 160px;
+  }
+  @media (max-width: 767px) {
+  }
+`
+
+export const SeparadorForm2 = styled.div`
+  width: 85%;
+  height: 320px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+@media (max-width: 480px) { 
+    // height: 160px;
   }
   @media (max-width: 767px) { 
-    height: 160px;
+    // height: 160px;
   }
 `
 export const InputForm = styled.input`
-width: 90%;
-height: 35px;
-margin: auto;
+  width: 100%;
+  height: 35px;
+  margin: auto;
 `
 export const InputFormCheck = styled.input`
-width: 50%;
-height: 30px;
-margin: auto;
-
+  
 `
 export const LabelInput = styled.label`
-width: 90%;
-height: 30px;
-margin: auto;
-font-family: 'Hind Siliguri', sans-serif;
-font-size: 17px;
-font-weight: 200;
+  width: 100%;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
 @media (max-width: 480px) { 
     font-size: 14px;
   }
@@ -619,45 +610,45 @@ font-weight: 200;
 `
 
 export const AjusteCheckBox = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: center;
-width: 90%;
-margin: auto;
-padding-left: 50px;
-@media (max-width: 480px) { 
-    padding:0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 0px;
+  @media (max-width: 480px) { 
+    padding: 15px 0px;
   }
   @media (max-width: 767px) { 
-    padding:0;
+    padding: 15px 0px;
   }
 `
 
 export const ButtonForm = styled.input`
-width: 150px;
-height: 35px;
-border-radius: 10px;
-margin: auto;
-background: #1A1A1A;
-font-size: 20px;
-color: white;
-font-family: 'Hind Siliguri', sans-serif;
+  width: 80%;
+  height: 45px;
+  border-radius: 25px;
+  border: none;
+  margin: auto;
+  background: #1A1A1A;
+  font-size: 20px;
+  color: white;
+  font-family: 'Hind Siliguri', sans-serif;
 `
 
 export const LabelInputCheck = styled.p`
-font-family: 'Hind Siliguri', sans-serif;
-font-size: 17px;
-width: 50%;
-@media (max-width: 480px) { 
-    width:100%;
-    font-size: 13px;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 17px;
+  margin: 0px;
+  @media (max-width: 480px) { 
+    width: 100%;
+    font-size: 17px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
   @media (max-width: 767px) { 
-      width:100%;
-    font-size: 13px;
+    width:100%;
+    font-size: 17px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -665,9 +656,10 @@ width: 50%;
 `
 
 export const SubBoxLogo = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 
@@ -723,24 +715,26 @@ justify-content: center;
 
 `
 export const  Seccion3 = styled.div`
-width: 100%;
-height:430px;
-background: #1A1A1A;
+  width: 100%;
+  height: 330px;
+  background: #1A1A1A;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 @media (min-width: 768px) and (max-width: 1199px) { 
     width: 100%;
     height: 500px;
-     }
+  }
 `
 export const  Seccion4 = styled.div`
-width: 100%;
-height: 800px;
-margin-bottom: 20px;
+  width: 100%;
+  margin-bottom: 20px;
 `
 export const  Seccion5 = styled.div`
-width: 80%;
-height: 470px;
-margin: auto;
-border: 1px solid black;
+  width: 80%;
+  height: 470px;
+  margin: auto;
+  border: 1px solid black;
 @media (max-width: 480px) { 
     
   }
@@ -755,14 +749,8 @@ border: 1px solid black;
    }
 `
 export const  Seccion6 = styled.div`
-width: 80%;
-height: 200px;
-margin: auto;
-text-align: center;
-
-@media (min-width: 768px) and (max-width: 1199px) { 
-  width: 20vh;
- }
+  width: 100%;
+  text-align: center;
 `
 
 export const BoxMobile2 = styled.div`
@@ -773,16 +761,31 @@ background: #F5F2F2;
 `
 
 export const BoxDiagonal = styled.div`
-width:80%;
-height: 140px;
-margin: auto;
-text-align: center;
+  margin-top: -40px;
+  width: 90%;
+  border: 1px solid black;
+  border-top: 0px !important;
+  height: 180px;
+  text-align: center;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 20px;
 `
+export const BoxDiag = styled.div`
+  width: 100%;
+  background: #1A1A1A;
+  height: 250px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  clip-path: polygon(0.5% 0%,100.5% 0%,150% 74%,0% 100%);
+`
+
 export const BoxDiagonal1 = styled.div`
 width: 100%;
-height: 40vh;
-background: black;
-clip-path: polygon(0.5% 0%,101.5% 0%,187% 27%,0% 100%);
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
@@ -799,24 +802,22 @@ align-items: center;
 
 }
 @media (min-width: 1200px) and (max-width: 2000px) { 
-  height: 550px;
-  clip-path: polygon(0.5% 0%,101.5% 0%,187% 27%,0% 60%);
 
 }
 
 `
 export const LabelErrores = styled.p`
-color: red;
-font-size: 12px;
-font-family: Poppins;
-font-Weight: 600;
+  width: 100%;
+  color: red;
+  font-size: 12px;
+  font-family: Poppins;
+  font-Weight: 600;
+  margin: 4px !important; 
 `
 
 export const AjusteMobile = styled.div`
-width: 100%;
-height: 50%;
-display: flex;
-
+  width: 100%;
+  display: flex;
 `
 export const BoxMobile3 = styled.div`
 width: 90%;
@@ -829,14 +830,13 @@ justify-content: center;
 `
 
 export const Seccion7 = styled.div`
-width: 100%;
-height: 5%;
+  width: 100%;
+  margin-top: -30px;
+  margin-bottom: -10px;
 @media (max-width: 480px) { 
-  height: 5%;
-}
+  }
 @media (max-width: 767px) { 
-  height: 150px;
-}
+  }
 @media (min-width: 768px) and (max-width: 1199px) { 
   height: 12%;
 }
