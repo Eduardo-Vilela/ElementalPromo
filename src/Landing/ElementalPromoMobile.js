@@ -233,21 +233,21 @@ function ElementalPromoMobile() {
                       LÍNEA MODULAR
                       <Texto4>Una opción inmediata y económica.</Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck type="checkbox"  {...register("lineaModular1", {required: true})} />
+                    <InputFormCheck {...register("linea2")}  type="radio" value='lineaModular1'/>
                   </AjusteCheckBox> 
                   <AjusteCheckBox> 
                     <LabelInputCheck htmlFor="lineaTradicional1">
                       LÍNEA TRADICIONAL
                       <Texto4>Modelos en construcción húmeda. </Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck type="checkbox"  {...register("lineaTradicional1", {required: true})} />
+                    <InputFormCheck {...register("linea2")} type="radio" value='lineaTradicional1' />
                   </AjusteCheckBox>
                   <AjusteCheckBox>
                     <LabelInputCheck htmlFor="lineaDesign1">
                       LÍNEA DESIGN
                       <Texto4>Diseñá tu casa a tu medida. </Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck  type="checkbox"  {...register("lineaDesign1", {required: true})} />
+                    <InputFormCheck {...register("linea2")}  type="radio" value='lineaDesign1' />
                   </AjusteCheckBox>  
               </SeparadorForm>
               <ContainerButton>

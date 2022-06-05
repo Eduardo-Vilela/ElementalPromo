@@ -163,21 +163,21 @@ function ElementalPromo() {
                       LÍNEA MODULAR
                       <Texto4>Una opción inmediata y económica.</Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck type="checkbox" value='lineaModular' {...register("Linea")} />
+                    <InputFormCheck {...register("linea")} type="radio" value="lineaModular" />
                   </AjusteCheckBox> 
                   <AjusteCheckBox> 
                     <LabelInputCheck htmlFor="lineaTradicional">
                       LÍNEA TRADICIONAL
                       <Texto4>Modelos en construcción húmeda. </Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck type="checkbox" value='lineaTradicional' {...register("Linea ")} />
+                    <InputFormCheck {...register("linea ")} type="radio" value="lineaTradicional" />
                   </AjusteCheckBox>
                   <AjusteCheckBox>
                     <LabelInputCheck htmlFor="lineaDesign">
                       LÍNEA DESIGN
                       <Texto4>Diseñá tu casa a tu medida. </Texto4>
                     </LabelInputCheck>
-                    <InputFormCheck  type="checkbox" value='lineaDesign' {...register("Linea")} />
+                    <InputFormCheck {...register("linea", { required: true })} type="radio" value="lineaDesign" />
                   </AjusteCheckBox>  
               </SeparadorForm>
               <SeparadorForm>
