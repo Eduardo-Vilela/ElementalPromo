@@ -244,14 +244,14 @@ font-size: 17px;
 `
 export const TextoParrafo = styled.p`
 font-family: 'Hind Siliguri', sans-serif;
-font-size: 11px;
+font-size: 14px;
 font-weight: 600;
 @media (max-width: 480px) { 
    font-size: 11px;
    text-align: center;
   }
   @media (max-width: 767px) { 
-    font-size: 11px;
+    font-size: 14px;
     text-align: center;
   }
 
@@ -734,7 +734,6 @@ export const  Seccion5 = styled.div`
   width: 80%;
   height: 470px;
   margin: auto;
-  border: 1px solid black;
 @media (max-width: 480px) { 
     
   }
@@ -750,14 +749,17 @@ export const  Seccion5 = styled.div`
 `
 export const  Seccion6 = styled.div`
   width: 100%;
+  font-size: 0.9em;
   text-align: center;
+  height: 200px
 `
 
 export const BoxMobile2 = styled.div`
-width: 80%;
-height: 70%;
-margin: auto;
-background: #F5F2F2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 export const BoxDiagonal = styled.div`
@@ -772,6 +774,15 @@ export const BoxDiagonal = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   padding-bottom: 20px;
+
+  @media (max-width: 480px) { 
+    margin-top: -50px;
+    heigh: 200px;
+  }
+  @media (max-width: 767px) { 
+    margin-top: -60px;
+    heigh: 200px;
+  }
 `
 export const BoxDiag = styled.div`
   width: 100%;
@@ -782,6 +793,13 @@ export const BoxDiag = styled.div`
   flex-direction: column;
   justify-content: center;
   clip-path: polygon(0.5% 0%,100.5% 0%,150% 74%,0% 100%);
+
+  @media (max-width: 480px) { 
+    height: 300px;
+  }
+  @media (max-width: 767px) { 
+    height: 300px;
+  }
 `
 
 export const BoxDiagonal1 = styled.div`
@@ -792,13 +810,11 @@ justify-content: flex-start;
 text-align: center;
 align-items: center;
 @media (max-width: 480px) { 
-  height: 300px;
 }
 @media (max-width: 767px) { 
-  height: 300px;
 }
 @media (min-width: 768px) and (max-width: 1199px) { 
-  height: 300px;
+
 
 }
 @media (min-width: 1200px) and (max-width: 2000px) { 
@@ -823,6 +839,7 @@ export const BoxMobile3 = styled.div`
 width: 90%;
 height 30%;
 margin: auto;
+margin-bottom: 0px !important;
 background: black;
 display: flex;
 flex-direction: row;

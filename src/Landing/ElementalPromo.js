@@ -247,29 +247,30 @@ function ElementalPromo() {
                       </Parrafo3>
                     </BoxParrafos>
                   </Parte1>
-                <Parte2>
-                  <BoxDiagonal1>
-                    <BoxDiag>
-                      <img width='35' height='35' alt='icono' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202015/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Frame_ullzbf.png'/>
-                                {/* <img  alt='linea' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202690/ELEMENTAL%20CONSTRUCTORA/LandingPromo/linea_hmr0je.png'/> */}
-                      <TituloCasita>
-                        CONSTRUIMOS LA<br/>
-                          CASA DE TUS<br/> 
-                        SUEÑOS A TU MEDIDA,<br/> 
-                        CON LA MEJOR <br/>
-                        FINANCIACIÓN.
-                      </TituloCasita>
-                    </BoxDiag> 
-                    <BoxDiagonal>
-                      <Texto1>18</Texto1>
-                      <Texto2>FAMILIAS NOS <br/>ELIGIERON</Texto2>
-                      <Texto1>84</Texto1>
-                      <Texto2>EN PROMEDIO MENSUAL <br/>DE FORMULARIOS <br/>RECIBIDOS</Texto2>
-                    </BoxDiagonal>
-                  </BoxDiagonal1>
-                  <Seccion6>
-                    <TituloParrafos>SOMOS UNA<br/> EMPRESA JOVEN, <br/>A PURA EXPANSION Y <br/>CRECIMIENTO.</TituloParrafos>
-                  </Seccion6>
+                  <Parte2>
+                    <BoxDiagonal1>
+                      <BoxDiag>
+                        <img width='35' height='35' alt='icono' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202015/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Frame_ullzbf.png'/>
+                                  {/* <img  alt='linea' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202690/ELEMENTAL%20CONSTRUCTORA/LandingPromo/linea_hmr0je.png'/> */}
+                        <TituloCasita>
+                          CONSTRUIMOS LA<br/>
+                            CASA DE TUS<br/> 
+                          SUEÑOS A TU MEDIDA,<br/> 
+                          CON LA MEJOR <br/>
+                          FINANCIACIÓN.
+                        </TituloCasita>
+                      </BoxDiag> 
+                      <BoxDiagonal>
+                        <Texto1>18</Texto1>
+                        <Texto2>FAMILIAS NOS <br/>ELIGIERON</Texto2>
+                        <Texto1>84</Texto1>
+                        <Texto2>EN PROMEDIO MENSUAL <br/>DE FORMULARIOS <br/>RECIBIDOS</Texto2>
+                      </BoxDiagonal>
+                    </BoxDiagonal1>
+
+                    <Seccion6>
+                      <TituloParrafos>SOMOS UNA<br/> EMPRESA JOVEN, <br/>A PURA EXPANSION Y <br/>CRECIMIENTO.</TituloParrafos>
+                    </Seccion6>
                   </Parte2>               
                 </Box2>
               </BoxArriba>

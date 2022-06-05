@@ -3,6 +3,7 @@ import {
   BoxLogo,
   SubBoxLogo,
   BoxPrincipal2,
+  BoxDiag,
   Seccion1,
   Seccion2,
   Seccion3,
@@ -104,10 +105,12 @@ function ElementalPromoMobile() {
             <img width='80%' alt='logo' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654218679/ELEMENTAL%20CONSTRUCTORA/LandingPromo/222_oule7w.svg'/>
           </BoxMobile3>
           <BoxMobile2>
-            <Titulo>
-              EL SUEÑO DE LA CASA PROPIA,<br/>  EN TIEMPO RECORD.<br/> 
-              <b>FINANCIACION A TASA 0% EN PESOS</b>
-            </Titulo>
+            <div style={{width:'80%', background: '#F5F2F2'}}>
+              <Titulo>
+                EL SUEÑO DE LA CASA PROPIA,<br/>  EN TIEMPO RECORD.<br/> 
+                <b>FINANCIACION A TASA 0% EN PESOS</b>
+              </Titulo>
+            </div>
           </BoxMobile2>
         </Seccion1> 
         <Seccion2>
@@ -253,26 +256,28 @@ function ElementalPromoMobile() {
              </BoxForm>
         </Seccion4>
         <Seccion5>
-         <BoxDiagonal1>
-           <div style={{padding:'20px'}}>
-            <img width='35' height='35' alt='icono' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202015/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Frame_ullzbf.png'/>
-                       {/* <img  alt='linea' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202690/ELEMENTAL%20CONSTRUCTORA/LandingPromo/linea_hmr0je.png'/> */}
-            <TituloCasita>
-             CONSTRUIMOS LA<br/>
-              CASA DE TUS<br/> 
-             SUEÑOS A TU MEDIDA,<br/> 
-             CON LA MEJOR <br/>
-             FINANCIACION.
-            </TituloCasita>
-            </div> 
-         </BoxDiagonal1>
-         <BoxDiagonal>
-            <Texto1>18</Texto1>
-            <Texto2>FAMILIAS NOS <br/>ELIGIERON</Texto2>
-            <Texto1>84</Texto1>
-            <Texto2>EN PROMEDIO MENSUAL <br/>DE FORMULARIOS <br/>RECIBIDOS</Texto2>
-         </BoxDiagonal>
+        <BoxDiagonal1>
+                      <BoxDiag>
+                        <img width='35' height='35' alt='icono' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202015/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Frame_ullzbf.png'/>
+                                  {/* <img  alt='linea' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202690/ELEMENTAL%20CONSTRUCTORA/LandingPromo/linea_hmr0je.png'/> */}
+                        <TituloCasita>
+                          CONSTRUIMOS LA<br/>
+                            CASA DE TUS<br/> 
+                          SUEÑOS A TU MEDIDA,<br/> 
+                          CON LA MEJOR <br/>
+                          FINANCIACIÓN.
+                        </TituloCasita>
+                      </BoxDiag> 
+                      <BoxDiagonal>
+                        <Texto1>18</Texto1>
+                        <Texto2>FAMILIAS NOS <br/>ELIGIERON</Texto2>
+                        <Texto1>84</Texto1>
+                        <Texto2>EN PROMEDIO MENSUAL <br/>DE FORMULARIOS <br/>RECIBIDOS</Texto2>
+                      </BoxDiagonal>
+                    </BoxDiagonal1>
+
         </Seccion5>
+
         <Seccion6>
          <h2>SOMOS UNA<br/> EMPRESA JOVEN, <br/>A PURA EXPANSION Y <br/>CRECIMIENTO.</h2>
         </Seccion6>
