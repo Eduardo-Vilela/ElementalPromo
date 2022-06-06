@@ -54,6 +54,9 @@ import { BoxPrincipal,
   BoxMobile,
   LabelErrores,
   AjusteMobile,
+  SeparadorForm3,
+  BoxCheckBox,
+  BoxCheckBox1,
 
 } from './Elements'
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -62,7 +65,7 @@ import { useForm } from "react-hook-form";
 import ElementalPromoMobile from './ElementalPromoMobile';
 import axios from "axios";
 import { toast } from 'react-toastify';
-
+import '../app.css';
 
 import "swiper/css/pagination";
 import "swiper/css";
@@ -71,12 +74,19 @@ function ElementalPromo() {
 
   const {
     register,
+    getValues,
     reset,
     formState: { errors },
     handleSubmit
     } = useForm({
       mode: "onChange"
     });
+
+    const atLeastOne = () =>
+    getValues("Linea").length ? true : "Please tell me if this is too hard.";
+
+  console.log(errors);
+
   const onSubmitPromo = (data, e) => {
     //alert(JSON.stringify(data));
     axios.post(`https://prueba.elementalconstructora.com.ar/webApi/public/FormularioPromoElemental`, data)
@@ -157,29 +167,34 @@ function ElementalPromo() {
               <SeparadorForm>
                       <TituloForm2>¿EN CÚAL DE NUESTRAS VIVIENDAS <br/> ESTAS INTERESADO?</TituloForm2>
               </SeparadorForm>
-              <SeparadorForm>
-                  <AjusteCheckBox>
-                    <LabelInputCheck htmlFor="lineaModular">
-                      LÍNEA MODULAR
+              <SeparadorForm3>
+                  <BoxCheckBox>
+                    <AjusteCheckBox>
+                      <LabelInputCheck>LÍNEA MODULAR</LabelInputCheck>
                       <Texto4>Una opción inmediata y económica.</Texto4>
-                    </LabelInputCheck>
-                    <InputFormCheck type="checkbox"  value='Modular' {...register("Linea", {required: true})} />
-                  </AjusteCheckBox> 
-                  <AjusteCheckBox> 
-                    <LabelInputCheck htmlFor="lineaTradicional">
-                      LÍNEA TRADICIONAL
+                    </AjusteCheckBox>
+                    <AjusteCheckBox>
+                      <LabelInputCheck>LÍNEA TRADICIONAL</LabelInputCheck>
                       <Texto4>Modelos en construcción húmeda. </Texto4>
-                    </LabelInputCheck>
-                    <InputFormCheck type="checkbox" value='Tradicional' {...register("Linea", {required: true})} />
-                  </AjusteCheckBox>
-                  <AjusteCheckBox>
-                    <LabelInputCheck htmlFor="lineaDesign">
-                      LÍNEA DESIGN
+                    </AjusteCheckBox>
+                    <AjusteCheckBox>
+                      <LabelInputCheck>LÍNEA DESIGN</LabelInputCheck>
                       <Texto4>Diseñá tu casa a tu medida. </Texto4>
-                    </LabelInputCheck>
-                    <InputFormCheck  type="checkbox"  value='Design' {...register("Linea", {required: true})} />
-                  </AjusteCheckBox>  
-              </SeparadorForm>
+                    </AjusteCheckBox>
+                  </BoxCheckBox>
+                  <BoxCheckBox1>
+                    {['Modular', 'Tradicional', 'Design'].map((value) => (
+                        <InputFormCheck className='myCheckbox'
+                          key={value}
+                          type="checkbox"
+                          value={value}                  
+                          {...register("Linea", {
+                            validate: atLeastOne
+                          })}
+                        />
+                      ))}                                      
+                  </BoxCheckBox1>
+              </SeparadorForm3>
               <SeparadorForm>
                     <ButtonForm type="submit" value="ENVIAR" />
               </SeparadorForm>
@@ -195,7 +210,7 @@ function ElementalPromo() {
                     <BoxTitulo>
                       <Titulo>
                         EL SUEÑO DE LA CASA PROPIA, EN TIEMPO RECORD.<br/> 
-                        <b>FINANCIACION A TASA 0% EN PESOS</b>
+                        <b>FINANCIACIÓN A TASA 0% EN PESOS</b>
                       </Titulo>
                     </BoxTitulo>
                     <BoxCarrousel>
@@ -269,7 +284,7 @@ function ElementalPromo() {
                     </BoxDiagonal1>
 
                     <Seccion6>
-                      <TituloParrafos>SOMOS UNA<br/> EMPRESA JOVEN, <br/>A PURA EXPANSION Y <br/>CRECIMIENTO.</TituloParrafos>
+                      <TituloParrafos>SOMOS UNA<br/> EMPRESA JOVEN, <br/>A PURA EXPANSIÓN Y <br/>CRECIMIENTO.</TituloParrafos>
                     </Seccion6>
                   </Parte2>               
                 </Box2>

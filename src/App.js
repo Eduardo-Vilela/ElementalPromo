@@ -1,6 +1,7 @@
 import ElementalPromo from './Landing/ElementalPromo';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '../src/app.css';
 
 function App() {
   return (

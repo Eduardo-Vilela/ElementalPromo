@@ -46,6 +46,10 @@ AjusteMobile,
 BoxMobile3,
 Seccion7,
 ContainerButton,
+SeparadorForm3,
+BoxCheckBox,
+BoxCheckBox1,
+
  
 } from './Elements'
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -61,15 +65,22 @@ function ElementalPromoMobile() {
   const {
     register,
     reset,
+    getValues,
     formState: { errors },
     handleSubmit
   } = useForm({
     mode: "onChange"
   });
   
+  const atLeastOne = () =>
+  getValues("Linea").length ? true : "Please tell me if this is too hard.";
+
+console.log(errors);
+
+
   const onSubmit = (data,e) => {
     //alert(JSON.stringify(data));
-    axios.post(`https://prueba.elementalconstructora.com.ar/webApi/public/FormularioPromoElementalMobile`, data)
+    axios.post(`https://prueba.elementalconstructora.com.ar/webApi/public/FormularioPromoElemental`, data)
       .then(function (response) {
         toast.success('Formulario enviado!', {
           position: "top-right",
@@ -194,27 +205,27 @@ function ElementalPromoMobile() {
                     <Texto3>Dejanos tus datos para recibir más información sobre nuestras viviendas. </Texto3>
               </SeparadorForm>
               <SeparadorForm2>      
-                    <LabelInput htmlFor="name">NOMBRE</LabelInput>
+                    <LabelInput htmlFor="Nombre">NOMBRE</LabelInput>
                     <InputForm
-                      {...register("name", {
+                      {...register("Nombre", {
                         required: "Ingrese su nombre",
                       })}
                     />
-                    {errors.name && <LabelErrores>{errors.name.message}</LabelErrores>}
+                    {errors.Nombre && <LabelErrores>{errors.Nombre.message}</LabelErrores>}
 
-                    <LabelInput htmlFor="Phone">TELEFONO</LabelInput>
+                    <LabelInput htmlFor="Telefono">TELÉFONO</LabelInput>
                     <InputForm
                        type="number"
-                      {...register("Phone", {
+                      {...register("Telefono", {
                         required: "Ingrese un celular",
                       })}
                     />
-                    {errors.Phone && <LabelErrores>{errors.Phone.message}</LabelErrores>}
+                    {errors.Telefono && <LabelErrores>{errors.Telefono.message}</LabelErrores>}
 
-                    <LabelInput htmlFor="correo">EMAIL</LabelInput>
+                    <LabelInput htmlFor="email">EMAIL</LabelInput>
                     <InputForm
                       type="text"
-                      {...register("correo", {
+                      {...register("email", {
                         required: "Correo Invalido",
                         pattern: {
                           value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
@@ -222,34 +233,39 @@ function ElementalPromoMobile() {
                         }
                       })}
                     />
-                    {errors.correo && <LabelErrores>{errors.correo.message}</LabelErrores>}
+                    {errors.email && <LabelErrores>{errors.email.message}</LabelErrores>}
               </SeparadorForm2>
               <ContainerButton>
                       <TituloForm2>¿EN CUAL DE NUESTRAS VIVIENDAS <br/> ESTAS INTERESADO?</TituloForm2>
               </ContainerButton>
-              <SeparadorForm>
-                  <AjusteCheckBox>
-                    <LabelInputCheck htmlFor="lineaModular1">
-                      LÍNEA MODULAR
+              <SeparadorForm3>
+                  <BoxCheckBox>
+                    <AjusteCheckBox>
+                      <LabelInputCheck>LÍNEA MODULAR</LabelInputCheck>
                       <Texto4>Una opción inmediata y económica.</Texto4>
-                    </LabelInputCheck>
-                    <InputFormCheck type="checkbox" value='Modular1'  {...register("linea1", {required: true})} />
-                  </AjusteCheckBox> 
-                  <AjusteCheckBox> 
-                    <LabelInputCheck htmlFor="lineaTradicional1">
-                      LÍNEA TRADICIONAL
+                    </AjusteCheckBox>
+                    <AjusteCheckBox>
+                      <LabelInputCheck>LÍNEA TRADICIONAL</LabelInputCheck>
                       <Texto4>Modelos en construcción húmeda. </Texto4>
-                    </LabelInputCheck>
-                    <InputFormCheck type="checkbox" value='Tradicional1'  {...register("linea1", {required: true})} />
-                  </AjusteCheckBox>
-                  <AjusteCheckBox>
-                    <LabelInputCheck htmlFor="lineaDesign1">
-                      LÍNEA DESIGN
+                    </AjusteCheckBox>
+                    <AjusteCheckBox>
+                      <LabelInputCheck>LÍNEA DESIGN</LabelInputCheck>
                       <Texto4>Diseñá tu casa a tu medida. </Texto4>
-                    </LabelInputCheck>
-                    <InputFormCheck  type="checkbox" value='Design1'   {...register("linea1", {required: true})} />
-                  </AjusteCheckBox>  
-              </SeparadorForm>
+                    </AjusteCheckBox>
+                  </BoxCheckBox>
+                  <BoxCheckBox1>
+                    {['Modular', 'Tradicional', 'Design'].map((value) => (
+                        <InputFormCheck className='myCheckbox'
+                          key={value}
+                          type="checkbox"
+                          value={value}                  
+                          {...register("Linea", {
+                            validate: atLeastOne
+                          })}
+                        />
+                      ))}                                      
+                  </BoxCheckBox1>
+              </SeparadorForm3>
               <ContainerButton>
                     <ButtonForm type="submit" value="ENVIAR" />
                </ContainerButton>

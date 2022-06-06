@@ -256,16 +256,16 @@ font-weight: 600;
   }
 
 `
-export const Texto4 = styled.h3`
+export const Texto4 = styled.p`
 font-family: 'Hind Siliguri', sans-serif;
 font-size: 14px;
-font-weight: 600;
+font-weight: 400;
 line-height: 0;
 @media (max-width: 480px) { 
-    font-size: 14px;
+    font-size: 12px;
   }
   @media (max-width: 767px) { 
-    font-size: 14px;
+    font-size: 12px;
   }
 
 `
@@ -593,7 +593,11 @@ export const InputForm = styled.input`
   margin: auto;
 `
 export const InputFormCheck = styled.input`
-  
+width: 35px;
+height: 35px;
+:[checkend]{
+  background:red;
+}
 `
 export const LabelInput = styled.label`
   width: 100%;
@@ -610,16 +614,18 @@ export const LabelInput = styled.label`
 `
 
 export const AjusteCheckBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  padding: 15px 0px;
+ 
   @media (max-width: 480px) { 
-    padding: 15px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
   }
   @media (max-width: 767px) { 
-    padding: 15px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
   }
 `
 
@@ -635,7 +641,7 @@ export const ButtonForm = styled.input`
   font-family: 'Hind Siliguri', sans-serif;
 `
 
-export const LabelInputCheck = styled.p`
+export const LabelInputCheck = styled.h3`
   font-family: 'Hind Siliguri', sans-serif;
   font-size: 17px;
   margin: 0px;
@@ -861,4 +867,28 @@ export const Seccion7 = styled.div`
 @media (min-width: 1200px) and (max-width: 2000px) { 
   height: 12%;
 }
+`
+
+export const SeparadorForm3 = styled.div`
+width: 85%;
+height: 250px;
+align-items: center;
+margin: auto;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+`
+
+export const BoxCheckBox = styled.div`
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+`
+
+export const BoxCheckBox1 = styled.div`
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
 `
