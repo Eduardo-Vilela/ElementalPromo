@@ -3,3 +3,15 @@ input[type='checkbox']{
 
     accent-color:  #1A1A1A; 
 }
+
+@font-face {
+    font-family: NEXT ART;
+    src: url(../src/Landing/font/next-art.ttf) format("truetype");
+    font-display: swap;
+  }
+
+
+   *{
+    font-family: NEXT ART;
+    font-weight: 300;
+   }

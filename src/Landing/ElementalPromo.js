@@ -89,7 +89,7 @@ function ElementalPromo() {
 
   const onSubmitPromo = (data, e) => {
     //alert(JSON.stringify(data));
-    axios.post(`https://prueba.elementalconstructora.com.ar/webApi/public/FormularioPromoElemental`, data)
+    axios.post(`https://promo.elementalconstructora.com.ar/webApi/public/FormularioPromoElemental`, data)
       .then(function (response) {
         console.log(response.data);
         toast.success('Formulario enviado!', {
@@ -316,7 +316,7 @@ function ElementalPromo() {
                    </AjusteMobile>
                 </BoxBeneficios>
                 <Boxmapa>
-                   <FotoPlano alt='planocasa' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654116683/ELEMENTAL%20CONSTRUCTORA/LandingPromo/imagen_1-24-min_ajpd4b.png'/>
+                   <FotoPlano alt='planocasa' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654618771/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Mobile/imagen_1-24_gk3wbt.webp'/>
                 </Boxmapa>
               </BoxAbajo>
            </BoxIzquierda>

@@ -49,7 +49,10 @@ ContainerButton,
 SeparadorForm3,
 BoxCheckBox,
 BoxCheckBox1,
-
+ImagenLogo,
+ImagenSlide,
+ImagenCasita ,
+Negrita,
  
 } from './Elements'
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -59,6 +62,8 @@ import "swiper/css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { toast } from 'react-toastify';
+import '../app.css'
+
 
 function ElementalPromoMobile() {
 
@@ -80,7 +85,7 @@ console.log(errors);
 
   const onSubmit = (data,e) => {
     //alert(JSON.stringify(data));
-    axios.post(`https://prueba.elementalconstructora.com.ar/webApi/public/FormularioPromoElemental`, data)
+    axios.post(`https://promo.elementalconstructora.com.ar/webApi/public/FormularioPromoElemental`, data)
       .then(function (response) {
         toast.success('Formulario enviado!', {
           position: "top-right",
@@ -113,13 +118,13 @@ console.log(errors);
       <BoxPrincipal2>
         <Seccion1>
           <BoxMobile3>
-            <img width='80%' alt='logo' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654218679/ELEMENTAL%20CONSTRUCTORA/LandingPromo/222_oule7w.svg'/>
+            <ImagenLogo width='250' height='60' alt='logo' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654218679/ELEMENTAL%20CONSTRUCTORA/LandingPromo/222_oule7w.svg'/>
           </BoxMobile3>
           <BoxMobile2>
             <div style={{width:'80%', background: '#F5F2F2'}}>
               <Titulo>
                 EL SUEÑO DE LA CASA PROPIA,<br/>  EN TIEMPO RECORD.<br/> 
-                <b>FINANCIACION A TASA 0% EN PESOS</b>
+                <Negrita>FINANCIACION A TASA 0% EN PESOS</Negrita>
               </Titulo>
             </div>
           </BoxMobile2>
@@ -135,7 +140,7 @@ console.log(errors);
                 className="mySwiper"
               >
                  <SwiperSlide style={{textAlign:'center'}}>
-                   <img alt='slide1' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654116642/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Mobile/SLIDE_1_cwmrbl.webp'/>
+                   <ImagenSlide alt='slide1' width='450' height='350' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654116642/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Mobile/SLIDE_1_cwmrbl.webp'/>
                    <Parrafo1>
                        <TituloParrafos>LÍNEA MODULAR</TituloParrafos>
                        <TextoParrafo>
@@ -146,7 +151,7 @@ console.log(errors);
                     </Parrafo1>
                  </SwiperSlide>
                 <SwiperSlide style={{textAlign:'center'}}>
-                  <img alt='slide2' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654116642/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Mobile/SLIDE_2_3_gjvhb7.webp'/>
+                  <ImagenSlide alt='slide2' width='450' height='350' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654116642/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Mobile/SLIDE_2_3_gjvhb7.webp'/>
                   <Parrafo1>
                     <TituloParrafos>LÍNEA TRADICIONAL</TituloParrafos>
                     <TextoParrafo> 
@@ -158,7 +163,7 @@ console.log(errors);
                     </Parrafo1>
                 </SwiperSlide>
                 <SwiperSlide style={{textAlign:'center'}}>
-                  <img alt='slide3'src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654116642/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Mobile/SLIDE_3_rck35d.webp'/>
+                  <ImagenSlide alt='slide3' width='450' height='350' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654116642/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Mobile/SLIDE_3_rck35d.webp'/>
                   <Parrafo1>
                     <TituloParrafos>LÍNEA DESIGN</TituloParrafos>
                     <TextoParrafo>
@@ -195,7 +200,7 @@ console.log(errors);
             </AjusteMobile>
         </Seccion3>
         <Seccion7>
-           <FotoPlano alt='planocasa' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654116683/ELEMENTAL%20CONSTRUCTORA/LandingPromo/imagen_1-24-min_ajpd4b.png'/>
+           <FotoPlano width='300' height='150' alt='planocasa' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654618771/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Mobile/imagen_1-24_gk3wbt.webp'/>
         </Seccion7>
         <Seccion4>
            <BoxForm onSubmit={handleSubmit(onSubmit)}>
@@ -274,7 +279,7 @@ console.log(errors);
         <Seccion5>
         <BoxDiagonal1>
                       <BoxDiag>
-                        <img width='35' height='35' alt='icono' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202015/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Frame_ullzbf.png'/>
+                        <ImagenCasita width='35' height='35' alt='icono' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202015/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Frame_ullzbf.png'/>
                                   {/* <img  alt='linea' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654202690/ELEMENTAL%20CONSTRUCTORA/LandingPromo/linea_hmr0je.png'/> */}
                         <TituloCasita>
                           CONSTRUIMOS LA<br/>

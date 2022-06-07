@@ -1,27 +1,22 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
   
   
-    & h1 {
-        font-family: 'Hind Siliguri', sans-serif;
-    }
-  
-    & h2 {
-        font-family: 'Hind Siliguri', sans-serif;
-    }
-    & h3 {
-        font-family: 'Hind Siliguri', sans-serif;
-
-    }
-    body {
-        font-family: 'Hind Siliguri', sans-serif;
-    }
+    
 `
 
+export const ImagenLogo = styled.img`
 
-
+`
+export const ImagenSlide = styled.img`
+`
+export const ImagenCasita  = styled.img`
+`
+export const Negrita = styled.p`
+font-weigth: 600;
+`
 export const BoxPrincipal = styled.div`
 width: 100%;
 background: white;
@@ -182,8 +177,8 @@ justify-content: center;
 export const Titulo = styled.p`
 font-weight: 400;
 font-size: 27px;
+font-family: 'Maven Pro', sans-serif;
 line-height: 33px;
-font-family: 'Hind Siliguri', sans-serif;
 text-align: center;
 @media (max-width: 480px) { 
     font-size: 20px;
@@ -232,7 +227,6 @@ export const SubBoxCarusel = styled.div`
     }
 `
 export const TituloParrafos = styled.h3`
-font-family: 'Hind Siliguri', sans-serif;
 font-size: 17px;
 
 @media (max-width: 480px) { 
@@ -243,9 +237,9 @@ font-size: 17px;
   }
 `
 export const TextoParrafo = styled.p`
-font-family: 'Hind Siliguri', sans-serif;
 font-size: 14px;
-font-weight: 600;
+font-family: 'Maven Pro', sans-serif;
+font-weight: 300;
 @media (max-width: 480px) { 
    font-size: 11px;
    text-align: center;
@@ -257,9 +251,9 @@ font-weight: 600;
 
 `
 export const Texto4 = styled.p`
-font-family: 'Hind Siliguri', sans-serif;
 font-size: 14px;
-font-weight: 400;
+font-family: 'Maven Pro', sans-serif;
+font-weight: 300;
 line-height: 0;
 @media (max-width: 480px) { 
     font-size: 12px;
@@ -353,11 +347,11 @@ height: 40px;
 
 `
 export const Subtitulo = styled.p`
-font-family: 'Hind Siliguri', sans-serif;
 font-size: 15px;
 color: white;
 line-height: 15px;
-font-weight: 500;
+font-family: 'Maven Pro', sans-serif;
+font-weight: 300;
 
 @media (max-width: 480px) { 
     font-size: 13px;
@@ -387,7 +381,6 @@ export const FotoPlano = styled.img`
 
 export const TituloCasita = styled.h3`
 color: white;
-font-family: 'Hind Siliguri', sans-serif;
 font-size: 15px;
 font-weight: 200;
 @media (min-width: 768px) and (max-width: 1199px) { 
@@ -398,7 +391,6 @@ font-weight: 200;
   }
 `
 export const Texto1 = styled.h3`
-font-family: 'Hind Siliguri', sans-serif;
 font-size: 18px;
 line-height: 0;
 
@@ -409,8 +401,8 @@ line-height: 0;
 export const Texto3 = styled.h3`
   color: black;
   font-size: 15px;
-  font-weight: 500;
-  font-family: 'Hind Siliguri', sans-serif;
+  font-weight: 200;
+  font-family: 'Maven Pro', sans-serif;
   line-height: 1.3em;
   @media (max-width: 767px) { 
     font-size: 14px;
@@ -425,7 +417,6 @@ export const Texto2 = styled.p`
 font-size: 12px;
 color: black;
 font-weight: 600;
-font-family: 'Hind Siliguri', sans-serif;
 line-height: 12px;
 margin: 0px;
 
@@ -445,13 +436,13 @@ right: 0;
 `
 
 export const Joven = styled.h3`
-font-family: 'Hind Siliguri', sans-serif;
 font-size: 17px;
 text-align: center;
 `
 
 export const BoxForm = styled.form`
   width: 90%;
+  height: 83%;
   margin:auto;
   padding: 20px 0px;
   background:#F5F2F2;
@@ -503,11 +494,11 @@ export const BoxLogo = styled.div`
 `
 
 export const TituloForm = styled.p`
-  font-family: 'Hind Siliguri', sans-serif;
   font-size: 22px;
+  font-family: 'Maven Pro', sans-serif;
   margin: 0;
   text-align: center;
-  font-weight: 500;
+  font-weight: 200;
 @media (max-width: 480px) { 
     font-size: 20px;
   }
@@ -516,7 +507,6 @@ export const TituloForm = styled.p`
   }
 `
 export const Tituloform3 = styled.p`
-font-family: 'Hind Siliguri', sans-serif;
 font-size: 24px;
 margin: 0;
 text-align: center;
@@ -530,7 +520,6 @@ font-weight: 700;
   }
 `
 export const TituloForm2 = styled.p`
-font-family: 'Hind Siliguri', sans-serif;
 font-size: 18px;
 margin: 0;
 text-align: center;
@@ -601,9 +590,8 @@ height: 35px;
 `
 export const LabelInput = styled.label`
   width: 100%;
-  font-family: 'Hind Siliguri', sans-serif;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 400;
   text-align: left;
 @media (max-width: 480px) { 
     font-size: 14px;
@@ -638,12 +626,11 @@ export const ButtonForm = styled.input`
   background: #1A1A1A;
   font-size: 20px;
   color: white;
-  font-family: 'Hind Siliguri', sans-serif;
 `
 
 export const LabelInputCheck = styled.h3`
-  font-family: 'Hind Siliguri', sans-serif;
   font-size: 17px;
+  font-weight: 400;
   margin: 0px;
   @media (max-width: 480px) { 
     width: 100%;
@@ -700,7 +687,7 @@ width: 100%;
 height: 2700px;
 margin: auto;
 background: white;
-background-image: url(https://res.cloudinary.com/grupo-delsud/image/upload/v1654268939/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Mobile/FONDO_MOBILE_2_g9mmhc.png);
+background-image: url(https://res.cloudinary.com/grupo-delsud/image/upload/v1654623801/ELEMENTAL%20CONSTRUCTORA/LandingPromo/Mobile/4-05_ju5ct3.webp);
 background-size: contain;
 `
 
@@ -832,9 +819,8 @@ export const LabelErrores = styled.p`
   width: 100%;
   color: red;
   font-size: 12px;
-  font-family: Poppins;
+  font-family: 'Maven Pro', sans-serif;
   font-Weight: 600;
-  font-family: 'Hind Siliguri', sans-serif;
   margin: 4px !important; 
 `
 
