@@ -118,14 +118,14 @@ console.log(errors);
       <BoxPrincipal2>
         <Seccion1>
           <BoxMobile3>
-            <ImagenLogo width='250' height='60' alt='logo' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654218679/ELEMENTAL%20CONSTRUCTORA/LandingPromo/222_oule7w.svg'/>
+            <ImagenLogo width='250' height='100' alt='logo' src='https://res.cloudinary.com/grupo-delsud/image/upload/v1654218679/ELEMENTAL%20CONSTRUCTORA/LandingPromo/222_oule7w.svg'/>
           </BoxMobile3>
           <BoxMobile2>
-            <div style={{width:'80%', background: '#F5F2F2'}}>
+            <div style={{width:'80%', background: '#F5F2F2', height:'200px',display:'flex',flexDirection:'column',justifyContent:'center'}}>
               <Titulo>
-                EL SUEÑO DE LA CASA PROPIA,<br/>  EN TIEMPO RECORD.<br/> 
-                <Negrita>FINANCIACION A TASA 0% EN PESOS</Negrita>
+                EL SUEÑO DE LA CASA PROPIA, EN TIEMPO RECORD.<br/> 
               </Titulo>
+              <Negrita>FINANCIACIÓN A <br/>TASA 0% EN PESOS</Negrita>
             </div>
           </BoxMobile2>
         </Seccion1> 
@@ -207,7 +207,7 @@ console.log(errors);
               <SeparadorForm>
                     <TituloForm>ELEGÍ COMO VIVIR,</TituloForm>
                     <Tituloform3>ELEGÍ ELEMENTAL</Tituloform3>
-                    <Texto3>Dejanos tus datos para recibir más información sobre nuestras viviendas. </Texto3>
+                    <Texto3>Dejanos tus datos para recibir<br/> más información sobre <br/>nuestras viviendas. </Texto3>
               </SeparadorForm>
               <SeparadorForm2>      
                     <LabelInput htmlFor="Nombre">NOMBRE</LabelInput>
@@ -241,7 +241,7 @@ console.log(errors);
                     {errors.email && <LabelErrores>{errors.email.message}</LabelErrores>}
               </SeparadorForm2>
               <ContainerButton>
-                      <TituloForm2>¿EN CUAL DE NUESTRAS VIVIENDAS <br/> ESTAS INTERESADO?</TituloForm2>
+                      <TituloForm2>¿EN CÚAL DE NUESTRAS VIVIENDAS <br/> ESTÁS INTERESADO?</TituloForm2>
               </ContainerButton>
               <SeparadorForm3>
                   <BoxCheckBox>
@@ -300,7 +300,7 @@ console.log(errors);
         </Seccion5>
 
         <Seccion6>
-         <h2>SOMOS UNA<br/> EMPRESA JOVEN, <br/>A PURA EXPANSION Y <br/>CRECIMIENTO.</h2>
+         <h2 style={{fontFamily:'NEXT ART'}}>SOMOS UNA<br/> EMPRESA JOVEN, <br/>A PURA EXPANSIÓN Y <br/>CRECIMIENTO.</h2>
         </Seccion6>
       </BoxPrincipal2>
     </>

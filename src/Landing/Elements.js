@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap');
+
   
   
     
@@ -16,6 +17,10 @@ export const ImagenCasita  = styled.img`
 `
 export const Negrita = styled.p`
 font-weigth: 600;
+font-size: 22px;
+font-family: 'NEXT ART';
+text-align: center;
+margin: 0;
 `
 export const BoxPrincipal = styled.div`
 width: 100%;
@@ -175,16 +180,20 @@ justify-content: center;
 
 `
 export const Titulo = styled.p`
-font-weight: 400;
+font-weight: 500;
 font-size: 27px;
 font-family: 'Maven Pro', sans-serif;
 line-height: 33px;
 text-align: center;
 @media (max-width: 480px) { 
-    font-size: 20px;
+    font-size: 15px;
+    margin: 0;
+    margin-bottom: 10px;
   }
   @media (max-width: 767px) { 
-    font-size: 20px;
+    font-size: 15px;
+    margin: 0;
+    margin-bottom: 10px;
   }
 
 `
@@ -228,7 +237,7 @@ export const SubBoxCarusel = styled.div`
 `
 export const TituloParrafos = styled.h3`
 font-size: 17px;
-
+font-family: 'NEXT ART';
 @media (max-width: 480px) { 
     text-align: center;
   }
@@ -383,6 +392,7 @@ export const TituloCasita = styled.h3`
 color: white;
 font-size: 15px;
 font-weight: 200;
+font-family:'NEXT ART';
 @media (min-width: 768px) and (max-width: 1199px) { 
     font-size: 13px;
 }
@@ -393,7 +403,7 @@ font-weight: 200;
 export const Texto1 = styled.h3`
 font-size: 18px;
 line-height: 0;
-
+font-family:'NEXT ART';
 @media (min-width: 768px) and (max-width: 1199px) { 
     font-size: 22px;
 }
@@ -416,6 +426,7 @@ export const Texto3 = styled.h3`
 export const Texto2 = styled.p`
 font-size: 12px;
 color: black;
+font-family:'NEXT ART';
 font-weight: 600;
 line-height: 12px;
 margin: 0px;
@@ -495,7 +506,7 @@ export const BoxLogo = styled.div`
 
 export const TituloForm = styled.p`
   font-size: 22px;
-  font-family: 'Maven Pro', sans-serif;
+  font-family: 'NEXT ART', sans-serif;
   margin: 0;
   text-align: center;
   font-weight: 200;
@@ -511,7 +522,7 @@ font-size: 24px;
 margin: 0;
 text-align: center;
 font-weight: 700;
-
+font-family: 'NEXT ART';
 @media (max-width: 480px) { 
     font-size: 20px;
   }
@@ -524,6 +535,7 @@ font-size: 18px;
 margin: 0;
 text-align: center;
 font-weight: 600;
+font-family:'NEXT ART';
 @media (max-width: 480px) { 
     font-size: 15px;
   }
@@ -593,6 +605,7 @@ export const LabelInput = styled.label`
   font-size: 15px;
   font-weight: 400;
   text-align: left;
+  font-family: 'NEXT ART';
 @media (max-width: 480px) { 
     font-size: 14px;
   }
@@ -632,6 +645,7 @@ export const LabelInputCheck = styled.h3`
   font-size: 17px;
   font-weight: 400;
   margin: 0px;
+  font-family:'NEXT ART';
   @media (max-width: 480px) { 
     width: 100%;
     font-size: 17px;
@@ -693,7 +707,7 @@ background-size: contain;
 
 export const  Seccion1 = styled.div`
 width: 100%;
-height: 250px;
+height: 300px;
 margin: auto;
 display: flex;
 flex-direction: column;
@@ -749,6 +763,7 @@ export const  Seccion6 = styled.div`
 
 export const BoxMobile2 = styled.div`
   width: 100%;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
